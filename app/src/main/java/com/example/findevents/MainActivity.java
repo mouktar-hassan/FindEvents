@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity
             Intent login =new Intent(MainActivity.this, LoginActivity.class);
             startActivity(login);
         } else if (id == R.id.nav_gallery) {
+            Intent signup =new Intent(MainActivity.this, SignUp.class);
+            startActivity(signup);
 
         } else if (id == R.id.nav_slideshow) {
 

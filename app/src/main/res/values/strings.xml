@@ -10,8 +10,11 @@
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
+    <string name="prompt_pseudo">Pseudo</string>
     <string name="prompt_password">Mots de passe (Obligatoire)</string>
+    <string name="prompt_passwordConfirmation">Confirmation de Mots de passe (Obligatoire)</string>
     <string name="action_sign_in">Se Connecter</string>
+    <string name="action_sign_up">Inscription</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">Cette adresse email est invalide</string>
     <string name="error_invalid_password">Ce mot de passe est trop court</string>
