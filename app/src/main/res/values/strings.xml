@@ -7,7 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Authentification</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_pseudo">Pseudo</string>
@@ -22,5 +22,6 @@
     <string name="error_field_required">Ce champ est requis</string>
     <string name="permission_rationale">"Les autorisations de contacts sont nécessaires pour fournir des compléments de courrier électronique."
     </string>
-    <string name="title_activity_sign_up">SignUp</string>
+    <string name="title_activity_sign_up">Inscription</string>
+    <string name="title_activity_event">EventActivity</string>
 </resources>
