@@ -24,4 +24,14 @@
     </string>
     <string name="title_activity_sign_up">Inscription</string>
     <string name="title_activity_event">EventActivity</string>
+    <string name="evenement">Evenement</string>
+    <string name="titre_de_l_v_nement">Titre de l\'évènement</string>
+    <string name="dateCreation">Date de création</string>
+    <string name="description">Description</string>
+    <string name="titreEvenement">Titre de l\'évenement</string>
+    <string name="position">Position</string>
+    <string name="dateEvenement">Date de l\'évènement</string>
+    <string name="Tous_Evenements">Voir tous les évènements</string>
+    <string name="annuler">Annuler</string>
+    <string name="ajouter">Ajouter</string>
 </resources>
