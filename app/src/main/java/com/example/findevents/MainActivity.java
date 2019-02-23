@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(signup);
 
         } else if (id == R.id.nav_slideshow) {
+            Intent showall =new Intent(MainActivity.this, ShowAllActivity.class);
+            startActivity(showall);
 
         } else if (id == R.id.nav_manage) {
 
