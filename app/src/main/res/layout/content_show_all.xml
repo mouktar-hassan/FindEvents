@@ -162,7 +162,7 @@
         android:layout_marginLeft="3dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="133dp"
-        android:text="Date Evenement 3"
+        android:text="Titre Evenement 3"
         android:clickable="true"
         android:onClick="imageClick"
         app:layout_constraintEnd_toEndOf="parent"
