@@ -36,4 +36,11 @@
     <string name="ajouter">Ajouter</string>
     <string name="title_activity_show_all">ShowAllActivity</string>
     <string name="title_activity_show">ShowActivity</string>
+    <!-- Pour le formulaire d'ajoute d'évènement -->
+    <string name="prompt_title">Titre de l\'évènement</string>
+    <string name="prompt_description">Description</string>
+    <string name="prompt_dateCreation">Date de Création</string>
+    <string name="prompt_dateEvent">Date de l\'Évènement</string>
+    <string name="prompt_adresse">Lieu</string>
+    <string name="action_Eventbutton">Ajouter</string>
 </resources>

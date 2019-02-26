@@ -34,8 +34,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/add_icon"
-                android:layout_marginLeft="70dp"/>
+                android:src="@drawable/login_img"
+                android:layout_marginLeft="60dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
