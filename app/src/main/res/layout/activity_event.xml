@@ -113,6 +113,8 @@
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="text"
+                    android:focusableInTouchMode="false"
+                    android:editable="false"
                     android:maxLines="4"
                     android:singleLine="true" />
 

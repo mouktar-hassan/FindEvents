@@ -43,4 +43,7 @@
     <string name="prompt_dateEvent">Date de l\'Évènement</string>
     <string name="prompt_adresse">Lieu</string>
     <string name="action_Eventbutton">Ajouter</string>
+    <!-- Pour le formulaire Adresse -->
+    <string name="search_hint">Saisir un Lieu</string>
+    <string name="search_label">Lieu</string>
 </resources>
