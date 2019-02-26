@@ -46,4 +46,15 @@
     <!-- Pour le formulaire Adresse -->
     <string name="search_hint">Saisir un Lieu</string>
     <string name="search_label">Lieu</string>
+    <!-- Pour l'activité ShowAllEvent -->
+    <string name="cardModelTitle">Évènement</string>
+    <string name="cardModelAdresse">Adresse</string>
+    <!-- Pour l'activité ShowEventDetail -->
+    <string name="prompt_titleEvent">Titre de l\'Évènement</string>
+    <string name="prompt_descriptionEvent">Description</string>
+    <string name="prompt_date1Event">01/02/2019</string>
+    <string name="prompt_date2Event">20/03/2019</string>
+    <string name="action_participateButton">Participer</string>
+    <string name="action_modifyButton">Modifier</string>
+    <string name="action_deleteButton">Supprimer</string>
 </resources>
