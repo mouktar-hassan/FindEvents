@@ -279,6 +279,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailView.setAdapter(adapter);
     }
 
+    public void loginBackonClick(View view) {
+
+    }
+
 
     private interface ProfileQuery {
         String[] PROJECTION = {
@@ -345,6 +349,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+
+
+
     }
 }
 
