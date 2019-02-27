@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 
 public class EventActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class EventActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private Button bAddEvent;
+    private ImageButton imageButtonBack;
 
     private View.OnClickListener adresseListener=new View.OnClickListener() {
         @Override
@@ -42,9 +44,14 @@ public class EventActivity extends AppCompatActivity {
         mAdresse=(EditText)findViewById(R.id.eventAdresse);
         mAdresse.setOnClickListener(adresseListener);
         bAddEvent=(Button)findViewById(R.id.addEventbutton);
+        imageButtonBack=(ImageButton)findViewById(R.id.imageBtnBackEvent);
 
 
 
 
+    }
+
+    public void eventBackonClick(View view){
+        EventActivity.this.finish();
     }
 }

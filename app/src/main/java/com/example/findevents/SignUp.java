@@ -27,6 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class SignUp extends AppCompatActivity {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private ImageButton imageButtonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         // Set up the login form.
         mPseudoView = (AutoCompleteTextView) findViewById(R.id.pseudo);
+        imageButtonBack=(ImageButton)findViewById(R.id.imageBtnBackSignup);
 
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -93,6 +96,9 @@ public class SignUp extends AppCompatActivity {
 
 
 
+    public void signupBackonClick(View view){
+        SignUp.this.finish();
+    }
 
 
 
