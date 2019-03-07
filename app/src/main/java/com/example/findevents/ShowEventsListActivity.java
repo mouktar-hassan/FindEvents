@@ -11,19 +11,23 @@ import android.widget.Toast;
 public class ShowEventsListActivity extends AppCompatActivity {
 
     ListView lvCards;
+    JSONParser parser;
+    public static CardsAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_events_list);
 
         lvCards = (ListView) findViewById(R.id.list_cards);
-        CardsAdapter adapter = new CardsAdapter(this);
+        adapter = new CardsAdapter(this);
 
         lvCards.setAdapter(adapter);
-        adapter.addAll(new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse),
+        JSONParser parser =new JSONParser();
+        parser.execute();
+        /*adapter.addAll(new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse),
                 new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse),
                 new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse),
-                new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse));
+                new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse));*/
 
 
         lvCards.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -36,6 +40,7 @@ public class ShowEventsListActivity extends AppCompatActivity {
                 Object  itemValue    = (Object) lvCards.getItemAtPosition(position);
 
                 Intent iDetail=new Intent(ShowEventsListActivity.this,ShowEventDetailActivity.class);
+                //iDetail.putExtra("ti","Moi");
                 startActivity(iDetail);
 
                 //Show Alert
@@ -47,6 +52,8 @@ public class ShowEventsListActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
 
 
