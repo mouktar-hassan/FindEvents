@@ -2,10 +2,10 @@ package com.example.findevents;
 
 public class CardModel {
     private int imageId;
-    private int titleId;
-    private int subtitleId;
+    private String titleId;
+    private String subtitleId;
 
-    public CardModel(int imageId, int titleId, int subtitleId) {
+    public CardModel(int imageId, String titleId, String subtitleId) {
         this.imageId = imageId;
         this.titleId = titleId;
         this.subtitleId = subtitleId;
@@ -15,11 +15,11 @@ public class CardModel {
         return imageId;
     }
 
-    public int getTitle() {
+    public String getTitle() {
         return titleId;
     }
 
-    public int getSubtitle() {
+    public String getSubtitle() {
         return subtitleId;
     }
 }
