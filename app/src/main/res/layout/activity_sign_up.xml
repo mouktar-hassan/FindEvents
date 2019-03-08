@@ -42,12 +42,27 @@
                     android:id="@+id/pseudo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_pseudo"
+                    android:hint="Pseudo"
                     android:inputType="textPersonName"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+
+            <!--<android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>-->
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -67,7 +82,7 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <!--<android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -83,7 +98,7 @@
                     android:maxLines="1"
                     android:singleLine="true" />
 
-            </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout>-->
 
             <Button
                 android:id="@+id/sign_up_button"
@@ -99,7 +114,6 @@
                 android:layout_width="60dip"
                 android:layout_height="50dip"
                 android:layout_gravity="bottom|center"
-                android:onClick="signupBackonClick"
                 app:srcCompat="@drawable/back_btn" />
 
         </LinearLayout>
