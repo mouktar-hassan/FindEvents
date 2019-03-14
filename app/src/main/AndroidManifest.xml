@@ -25,7 +25,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ShowEventDetailActivity"></activity>
         <activity android:name=".ShowEventsListActivity" />
-        <activity android:name=".AdresseActivity" />
         <activity android:name=".EventActivity" />
         <activity
             android:name=".SignUp"

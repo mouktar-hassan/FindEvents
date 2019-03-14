@@ -100,9 +100,9 @@ public class LoginActivity extends AppCompatActivity  {
                     //création de la requete
                     String url = "http://fullstackter.alwaysdata.net/api/login";
 
-                    RequestQueue queue = Volley.newRequestQueue(context);
+                    RequestQueue  queue = Volley.newRequestQueue(context);
 
-                    StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                    StringRequest  postRequest = new StringRequest(Request.Method.POST, url,
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
