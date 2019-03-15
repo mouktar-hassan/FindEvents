@@ -44,12 +44,12 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-watch-v20\\abc_dialog_material_background.xml"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility_off.png.flat",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_dialog_material_background.xml.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
@@ -120,12 +120,12 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\dafb08525c008133b5ed22d1d16a5278\\res\\animator\\mtrl_fab_transformation_sheet_expand_spec.xml"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
@@ -188,12 +188,12 @@
         "source": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_divider_material.xml.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable\\abc_list_divider_material.xml"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_commentaire.xml.flat",
         "source": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\src\\main\\res\\layout\\activity_commentaire.xml"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_divider_material.xml.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable\\abc_list_divider_material.xml"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -240,12 +240,12 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\f5136d9bcd5ccefc73ba7cf4e6a36dcb\\res\\layout\\notification_action_tombstone.xml"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\f5136d9bcd5ccefc73ba7cf4e6a36dcb\\res\\layout\\notification_action_tombstone.xml"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_edit_text_material.xml.flat",
@@ -304,24 +304,24 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\dafb08525c008133b5ed22d1d16a5278\\res\\color\\design_error.xml"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_color_selector.xml.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\dafb08525c008133b5ed22d1d16a5278\\res\\color\\mtrl_btn_text_color_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
@@ -372,12 +372,12 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\dafb08525c008133b5ed22d1d16a5278\\res\\animator-v21\\design_appbar_state_list_animator.xml"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\dafb08525c008133b5ed22d1d16a5278\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -904,12 +904,12 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
-        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -1280,10 +1280,6 @@
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_show.xml.flat",
-        "source": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\src\\main\\res\\layout\\content_show.xml"
-    },
-    {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_search_url_text.xml.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\color\\abc_search_url_text.xml"
     },
@@ -1298,6 +1294,10 @@
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_single_item.xml.flat",
+        "source": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\src\\main\\res\\layout\\single_item.xml"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
@@ -1438,10 +1438,6 @@
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\138f38d192e7c1521fe7f7bcca57aa90\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
-    },
-    {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_show_all.xml.flat",
-        "source": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\src\\main\\res\\layout\\content_show_all.xml"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
@@ -2066,10 +2062,6 @@
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_password_eye.xml.flat",
         "source": "C:\\Users\\thien\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\dafb08525c008133b5ed22d1d16a5278\\res\\drawable-v21\\design_password_eye.xml"
-    },
-    {
-        "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_adresse.xml.flat",
-        "source": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\src\\main\\res\\layout\\activity_adresse.xml"
     },
     {
         "merged": "C:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",

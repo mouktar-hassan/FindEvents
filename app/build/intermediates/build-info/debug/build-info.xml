@@ -2,30 +2,59 @@
 <instant-run
     abi="x86"
     api-level="22"
-    build-mode="COLD"
+    build-mode="FULL"
     density="xhdpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
     plugin-version="3.3.2"
-    timestamp="1552647533197"
+    timestamp="1552660905968"
     token="5991966150512171253"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="36312" />
+        duration="63674" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1179" />
+        duration="10658" />
     <task
         name="verifier"
-        duration="635" />
+        duration="3677" />
 
     <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
         location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
@@ -33,28 +62,22 @@
 
     <build
         build-mode="FULL"
-        timestamp="1552643274086"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1552660905968"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
@@ -63,31 +86,16 @@
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1552647065273"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1552647533197"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\thien\StudioProjects\FindEvents\app\build\intermediates\instant-run-apk\debug\app-debug.apk"

@@ -1154,8 +1154,6 @@ id bottom
 id button
 id button2
 id button3
-id button4
-id button5
 id buttonInserer
 id buttonPanel
 id center
@@ -1200,7 +1198,6 @@ id enterAlways
 id enterAlwaysCollapsed
 id eventAdresse
 id eventCard
-id eventDateCreation
 id eventDateEvent
 id eventDescription
 id eventTitle
@@ -1234,9 +1231,6 @@ id imageBtnBackLogin
 id imageBtnBackSignup
 id imageButton
 id imageView
-id imageView3
-id imageView4
-id imageView5
 id info
 id invisible
 id italic
@@ -1248,11 +1242,13 @@ id light
 id line1
 id line3
 id listMode
-id list_cards
 id list_item
 id login
 id login_form
 id login_progress
+id main_rating
+id main_title
+id main_year
 id map
 id masked
 id message
@@ -1290,6 +1286,7 @@ id progress_circular
 id progress_horizontal
 id pseudo
 id radio
+id recyclelistview
 id recyclerViewCommentaire
 id right
 id right_icon
@@ -1351,19 +1348,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView1
-id textView10
-id textView11
-id textView12
-id textView14
 id textView2
-id textView3
-id textView4
-id textView5
-id textView6
-id textView7
-id textView8
-id textView9
 id text_input_password_toggle
 id text_subtitle
 id text_title
@@ -1445,7 +1430,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_adresse
 layout activity_commentaire
 layout activity_event
 layout activity_list_commentaire
@@ -1458,8 +1442,6 @@ layout app_bar_main
 layout card_item
 layout content_event
 layout content_main
-layout content_show
-layout content_show_all
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1486,6 +1468,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout single_item
 layout support_simple_spinner_dropdown_item
 menu activity_main_drawer
 menu main
@@ -1593,11 +1576,11 @@ string position
 string prompt_adresse
 string prompt_date1Event
 string prompt_date2Event
-string prompt_dateCreation
 string prompt_dateEvent
 string prompt_description
 string prompt_descriptionEvent
 string prompt_email
+string prompt_locationname
 string prompt_password
 string prompt_passwordConfirmation
 string prompt_pseudo
