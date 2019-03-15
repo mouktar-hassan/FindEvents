@@ -1,0 +1,4 @@
+#Fri Mar 15 10:59:20 CET 2019
+base.0=C\:\\Users\\thien\\StudioProjects\\FindEvents\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex

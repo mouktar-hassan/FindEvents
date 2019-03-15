@@ -161,5 +161,10 @@ public class SignUp extends AppCompatActivity {
     }
 }
 
+    /*[HttpPost]
+    public bool InsertNewFood(string name,string type,int price)
+    {
+        try
+        {
 
-
+*/

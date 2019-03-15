@@ -120,6 +120,14 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/action_deleteButton"
                 android:textStyle="bold" />
+            <Button
+                android:id="@+id/commentaire_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Commentaire"
+                android:textStyle="bold" />
             <ImageButton
                 android:id="@+id/imageBtnBackDetail"
                 android:layout_width="60dip"

@@ -1,0 +1,318 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\dafb08525c008133b5ed22d1d16a5278\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\138f38d192e7c1521fe7f7bcca57aa90\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-location:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.2.aar\1ae7e4a91c36006e59cb1f8ab7764620\AndroidManifest.xml:2:1-5:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\dc4c40cc543428e80ce631f04c844d62\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\d604d8103bc590d04b9789a8ae27c061\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.2.aar\6cc654fd3499d09ffed173e5b5381c31\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\686e0cbd51461b4b261b9dbc55c6cadb\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\83c12dd6888006ca07803904bae878be\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\74e81c7b838977b2654ab968a1f0d3b5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b79f1b0d241ad72306a4210fe12208b8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\0b7d64a4adec9aac9c194e2999210dbc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\89faebe897a25c609fa6bba5772184ce\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\c9c25fbccc9e04414ebdf9d48269f9a2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\b1d0af7cbf4bbaa956c9a8313ab5180a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\4b3786bafbf4214dc9d37e0569aaae45\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\8d88610a96793f31deb7b15fe28a28ce\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\c901572be121cc4e2c322436317b9c51\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\560c6dff465a81ab94d15fd8505f1839\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\c04f9563bae8c64acaee3c8f6004182c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\0e1ab03878bd4c5a46102e9dbd6de63f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\8bceb4c8de068af8b59edea67403d139\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\e61bdce36eee09aa73dc2d7650a269c7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\6f22976daca32dd2938eb33c9217ffb7\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f5136d9bcd5ccefc73ba7cf4e6a36dcb\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\eb03374e578f28c52251505837758ba8\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\d0b5d56c0d1b60a085eaaf92d280361e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\fbd176d1304d3fde901723db2e55a48e\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\c593f2d7f497e47b6f08afe51716f6fc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\3dd36df1ada168d01982462638b52035\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\0903a1ee03cfc81f68716ac3b07cf0e2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\fe2ae46251bee90d12ec7dca1e448a10\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\215552d9debd1a6a761d72852bd07e6c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\01bc0bc5f2e2a1dc4119093712a342d3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\173b5c69d8aab22224fa98dfacac8115\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\776be2f6078712ed95a4299af6e26056\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\6c9cbb526c062eef1de54efb2001d7dd\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+	package
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:1-65:12
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:5:5-71
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:5:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:7:5-72
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:7:22-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:13:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:13:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:15:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:16:5-79
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:16:22-76
+uses-permission#com.google.android.providers.gsf.permisson.READ_GSERVICES
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:17:5-97
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:17:22-94
+application
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:19:5-63:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\dafb08525c008133b5ed22d1d16a5278\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\dafb08525c008133b5ed22d1d16a5278\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-location:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.2.aar\1ae7e4a91c36006e59cb1f8ab7764620\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-location:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.2.aar\1ae7e4a91c36006e59cb1f8ab7764620\AndroidManifest.xml:4:5-19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\dc4c40cc543428e80ce631f04c844d62\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\dc4c40cc543428e80ce631f04c844d62\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\d604d8103bc590d04b9789a8ae27c061\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\d604d8103bc590d04b9789a8ae27c061\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.2.aar\6cc654fd3499d09ffed173e5b5381c31\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.2.aar\6cc654fd3499d09ffed173e5b5381c31\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\686e0cbd51461b4b261b9dbc55c6cadb\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\686e0cbd51461b4b261b9dbc55c6cadb\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\6f22976daca32dd2938eb33c9217ffb7\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\6f22976daca32dd2938eb33c9217ffb7\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f5136d9bcd5ccefc73ba7cf4e6a36dcb\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f5136d9bcd5ccefc73ba7cf4e6a36dcb\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\eb03374e578f28c52251505837758ba8\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\eb03374e578f28c52251505837758ba8\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f5136d9bcd5ccefc73ba7cf4e6a36dcb\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:24:9-35
+	android:label
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:22:9-41
+	android:roundIcon
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:23:9-54
+	android:icon
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:21:9-43
+	android:allowBackup
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:20:9-35
+	android:theme
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:25:9-40
+activity#com.example.findevents.ListCommentaire
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:26:9-62
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:26:19-50
+activity#com.example.findevents.ShowEventDetailActivity
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:27:9-61
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:27:19-58
+activity#com.example.findevents.ShowEventsListActivity
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:28:9-60
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:28:19-57
+activity#com.example.findevents.AdresseActivity
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:29:9-53
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:29:19-50
+activity#com.example.findevents.EventActivity
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:30:9-51
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:30:19-48
+activity#com.example.findevents.Commentaire
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:31:9-49
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:31:19-46
+activity#com.example.findevents.SignUp
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:32:9-34:62
+	android:label
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:34:13-59
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:33:13-35
+activity#com.example.findevents.LoginActivity
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:35:9-37:60
+	android:label
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:37:13-57
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:36:13-42
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:46:9-48:55
+	android:value
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:48:13-52
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:47:13-58
+activity#com.example.findevents.MapsActivity
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:50:9-52:59
+	android:label
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:52:13-56
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:51:13-41
+activity#com.example.findevents.MainActivity
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:53:9-62:20
+	android:label
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:55:13-45
+	android:theme
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:56:13-56
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:54:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:57:13-61:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:58:17-69
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:58:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:60:17-77
+	android:name
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml:60:27-74
+uses-sdk
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\dafb08525c008133b5ed22d1d16a5278\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\dafb08525c008133b5ed22d1d16a5278\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\138f38d192e7c1521fe7f7bcca57aa90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\138f38d192e7c1521fe7f7bcca57aa90\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-location:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.2.aar\1ae7e4a91c36006e59cb1f8ab7764620\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-location:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.2.aar\1ae7e4a91c36006e59cb1f8ab7764620\AndroidManifest.xml:3:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\dc4c40cc543428e80ce631f04c844d62\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\dc4c40cc543428e80ce631f04c844d62\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\d604d8103bc590d04b9789a8ae27c061\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\d604d8103bc590d04b9789a8ae27c061\AndroidManifest.xml:7:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.2.aar\6cc654fd3499d09ffed173e5b5381c31\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.2.aar\6cc654fd3499d09ffed173e5b5381c31\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\686e0cbd51461b4b261b9dbc55c6cadb\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\686e0cbd51461b4b261b9dbc55c6cadb\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\83c12dd6888006ca07803904bae878be\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\83c12dd6888006ca07803904bae878be\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\74e81c7b838977b2654ab968a1f0d3b5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\74e81c7b838977b2654ab968a1f0d3b5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b79f1b0d241ad72306a4210fe12208b8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b79f1b0d241ad72306a4210fe12208b8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\0b7d64a4adec9aac9c194e2999210dbc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\0b7d64a4adec9aac9c194e2999210dbc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\89faebe897a25c609fa6bba5772184ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\89faebe897a25c609fa6bba5772184ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\c9c25fbccc9e04414ebdf9d48269f9a2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\c9c25fbccc9e04414ebdf9d48269f9a2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\b1d0af7cbf4bbaa956c9a8313ab5180a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\b1d0af7cbf4bbaa956c9a8313ab5180a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\4b3786bafbf4214dc9d37e0569aaae45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\4b3786bafbf4214dc9d37e0569aaae45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\8d88610a96793f31deb7b15fe28a28ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\8d88610a96793f31deb7b15fe28a28ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\c901572be121cc4e2c322436317b9c51\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\c901572be121cc4e2c322436317b9c51\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\560c6dff465a81ab94d15fd8505f1839\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\560c6dff465a81ab94d15fd8505f1839\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\c04f9563bae8c64acaee3c8f6004182c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\c04f9563bae8c64acaee3c8f6004182c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\0e1ab03878bd4c5a46102e9dbd6de63f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\0e1ab03878bd4c5a46102e9dbd6de63f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\8bceb4c8de068af8b59edea67403d139\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\8bceb4c8de068af8b59edea67403d139\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\e61bdce36eee09aa73dc2d7650a269c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\e61bdce36eee09aa73dc2d7650a269c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\6f22976daca32dd2938eb33c9217ffb7\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\6f22976daca32dd2938eb33c9217ffb7\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f5136d9bcd5ccefc73ba7cf4e6a36dcb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f5136d9bcd5ccefc73ba7cf4e6a36dcb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\eb03374e578f28c52251505837758ba8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\eb03374e578f28c52251505837758ba8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\d0b5d56c0d1b60a085eaaf92d280361e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\d0b5d56c0d1b60a085eaaf92d280361e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\fbd176d1304d3fde901723db2e55a48e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\fbd176d1304d3fde901723db2e55a48e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\c593f2d7f497e47b6f08afe51716f6fc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\c593f2d7f497e47b6f08afe51716f6fc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\3dd36df1ada168d01982462638b52035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\3dd36df1ada168d01982462638b52035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\0903a1ee03cfc81f68716ac3b07cf0e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\0903a1ee03cfc81f68716ac3b07cf0e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\fe2ae46251bee90d12ec7dca1e448a10\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\fe2ae46251bee90d12ec7dca1e448a10\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\215552d9debd1a6a761d72852bd07e6c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\215552d9debd1a6a761d72852bd07e6c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\01bc0bc5f2e2a1dc4119093712a342d3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\01bc0bc5f2e2a1dc4119093712a342d3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\173b5c69d8aab22224fa98dfacac8115\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\173b5c69d8aab22224fa98dfacac8115\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\776be2f6078712ed95a4299af6e26056\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\776be2f6078712ed95a4299af6e26056\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\6c9cbb526c062eef1de54efb2001d7dd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\6c9cbb526c062eef1de54efb2001d7dd\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:25.2.0] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\686e0cbd51461b4b261b9dbc55c6cadb\AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\thien\StudioProjects\FindEvents\app\src\main\AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.2.aar\5cd1023095f844daf415d9eb8a875d08\AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.2.aar\6fd17e308284bff0ae3ac3f4334586f9\AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\thien\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.2.aar\2e40757740d934a2017bb514704a8df5\AndroidManifest.xml:20:20-65
