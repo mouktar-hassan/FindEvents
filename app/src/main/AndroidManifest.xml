@@ -26,7 +26,6 @@
         <activity android:name=".ListCommentaire"></activity>
         <activity android:name=".ShowEventDetailActivity" />
         <activity android:name=".ShowEventsListActivity" />
-        <activity android:name=".AdresseActivity" />
         <activity android:name=".EventActivity" />
         <activity android:name=".Commentaire" />
         <activity

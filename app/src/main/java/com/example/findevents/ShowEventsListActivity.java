@@ -1,57 +1,101 @@
 package com.example.findevents;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import beans.CardsAdapter;
+import beans.Events;
 
 public class ShowEventsListActivity extends AppCompatActivity {
 
-    ListView lvCards;
-    JSONParser parser;
-    public static CardsAdapter adapter;
+    private String url = "http://fullstackter.alwaysdata.net/api/events?longitude=1&latitude=1&radius=1000";
+
+    private RecyclerView mList;
+
+    private LinearLayoutManager linearLayoutManager;
+    private DividerItemDecoration dividerItemDecoration;
+    private List<Events> eventsList;
+    private RecyclerView.Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_events_list);
 
-        lvCards = (ListView) findViewById(R.id.list_cards);
-        adapter = new CardsAdapter(this);
+        mList = findViewById(R.id.recyclelistview);
 
-        lvCards.setAdapter(adapter);
-        JSONParser parser =new JSONParser();
-        parser.execute();
-        /*adapter.addAll(new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse),
-                new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse),
-                new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse),
-                new CardModel(R.drawable.event_icon, R.string.cardModelTitle, R.string.cardModelAdresse));*/
+        eventsList = new ArrayList<>();
+        adapter = new CardsAdapter(getApplicationContext(),eventsList);
+
+        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        dividerItemDecoration = new DividerItemDecoration(mList.getContext(), linearLayoutManager.getOrientation());
+
+        mList.setHasFixedSize(true);
+        mList.setLayoutManager(linearLayoutManager);
+        mList.addItemDecoration(dividerItemDecoration);
+        mList.setAdapter(adapter);
+
+        getData();
+    }
 
 
-        lvCards.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    private void getData() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // ListView Clicked item index
-                int itemPosition     = position;
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++) {
+                    try {
 
-                // ListView Clicked item value
-                Object  itemValue    = (Object) lvCards.getItemAtPosition(position);
+                        JSONObject jsonObject = response.getJSONObject(i);
 
-                Intent iDetail=new Intent(ShowEventsListActivity.this,ShowEventDetailActivity.class);
-                //iDetail.putExtra("ti","Moi");
-                startActivity(iDetail);
+                        Events event = new Events();
+                        event.setTitle(jsonObject.getString("title"));
+                        event.setDescritption(jsonObject.getString("description"));
+                        event.setDate_event(jsonObject.getString("date_event"));
 
-                //Show Alert
-                Toast.makeText(getApplicationContext(),
-                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
-                        .show();
-
-
+                        eventsList.add(event);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        progressDialog.dismiss();
+                    }
+                }
+                adapter.notifyDataSetChanged();
+                progressDialog.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Volley", error.toString());
+                progressDialog.dismiss();
             }
         });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
     }
+
 
 
 }
