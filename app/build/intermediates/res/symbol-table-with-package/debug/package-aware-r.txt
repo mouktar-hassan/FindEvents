@@ -1155,7 +1155,6 @@ id bottom
 id button
 id button2
 id button3
-id buttonInserer
 id buttonPanel
 id center
 id center_horizontal
@@ -1189,6 +1188,7 @@ id editText2
 id editText3
 id editText4
 id edit_query
+id edt_comment
 id email_login_form
 id end
 id enterAlways
@@ -1285,11 +1285,9 @@ id progress_circular
 id progress_horizontal
 id pseudo
 id radio
-id recyclerViewCommentaire
 id right
 id right_icon
 id right_side
-id saisirCmt
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
@@ -1429,7 +1427,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_commentaire
+layout activity_custom_dialog
 layout activity_event
 layout activity_login
 layout activity_main
@@ -1561,6 +1559,10 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string google_maps_key
 string hide_bottom_view_on_scroll_behavior
+string label_cancel
+string label_report
+string label_submit
+string label_type_your_comment
 string mtrl_chip_close_icon_content_description
 string nav_header_desc
 string nav_header_subtitle

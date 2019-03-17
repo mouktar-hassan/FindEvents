@@ -23,11 +23,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListCommentaire"></activity>
+
         <activity android:name=".ShowEventDetailActivity" />
         <activity android:name=".ShowEventsListActivity" />
         <activity android:name=".EventActivity" />
-        <activity android:name=".Commentaire" />
         <activity
             android:name=".SignUp"
             android:label="@string/title_activity_sign_up" />

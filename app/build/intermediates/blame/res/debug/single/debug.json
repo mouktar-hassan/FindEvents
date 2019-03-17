@@ -544,6 +544,10 @@
         "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/622c59b89080b2f46e53758fa5c8ef7f/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
+        "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/layout_activity_custom_dialog.xml.flat",
+        "source": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/res/layout/activity_custom_dialog.xml"
+    },
+    {
         "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/622c59b89080b2f46e53758fa5c8ef7f/res/drawable-xxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1594,10 +1598,6 @@
     {
         "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_dark.xml.flat",
         "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/622c59b89080b2f46e53758fa5c8ef7f/res/color/abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/layout_activity_commentaire.xml.flat",
-        "source": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/res/layout/activity_commentaire.xml"
     },
     {
         "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_background_transition_holo_light.xml.flat",

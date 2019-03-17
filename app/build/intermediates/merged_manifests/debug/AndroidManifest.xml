@@ -36,11 +36,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.findevents.ListCommentaire" />
         <activity android:name="com.example.findevents.ShowEventDetailActivity" />
         <activity android:name="com.example.findevents.ShowEventsListActivity" />
         <activity android:name="com.example.findevents.EventActivity" />
-        <activity android:name="com.example.findevents.Commentaire" />
         <activity
             android:name="com.example.findevents.SignUp"
             android:label="@string/title_activity_sign_up" />
