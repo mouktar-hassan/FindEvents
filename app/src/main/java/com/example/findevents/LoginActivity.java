@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity  {
 
             Button lien_login = findViewById(R.id.login);
 
-            lien_login.setOnClickListener(new View.OnClickListener() {
+            lien_login.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
 

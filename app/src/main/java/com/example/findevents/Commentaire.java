@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,6 +35,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Commentaire extends AppCompatActivity {
+
+    /*
 
     private List<CommentaireItem> listCommentaire;
     private ListView recyclerView;
@@ -161,4 +164,6 @@ public class Commentaire extends AppCompatActivity {
         }
         return content.toString();
     }
+
+    */
 }

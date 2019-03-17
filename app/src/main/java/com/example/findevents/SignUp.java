@@ -72,7 +72,7 @@ public class SignUp extends AppCompatActivity {
 
         Button lien_register = findViewById(R.id.sign_up_button);
 
-        lien_register.setOnClickListener(new View.OnClickListener() {
+        lien_register.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 boolean isInputOk = true;
@@ -161,10 +161,5 @@ public class SignUp extends AppCompatActivity {
     }
 }
 
-    /*[HttpPost]
-    public bool InsertNewFood(string name,string type,int price)
-    {
-        try
-        {
 
-*/
+

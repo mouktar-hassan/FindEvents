@@ -1,145 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:fitsSystemWindows="true"
     tools:context=".ShowEventDetailActivity">
 
-    <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/detail_progress"
-        style="?android:attr/progressBarStyleLarge"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_detail_list" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/icon_delete" />
 
-    <ScrollView
-        android:id="@+id/detail_card"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabCommente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email" />
 
-        <LinearLayout
-            android:id="@+id/eventCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabEdite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/icon_edit" />
 
-            <TextView
-                android:id="@+id/tvEventTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/prompt_titleEvent"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/light_font"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/event_icon"
-                android:layout_marginLeft="70dp"/>
-
-            <TextView
-                android:id="@+id/tvEventDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/light_font"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"
-                android:text="@string/prompt_description" />
-            <TextView
-                android:id="@+id/tvEventDateCreation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/light_font"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"
-                android:text="@string/prompt_date1Event" />
-            <TextView
-                android:id="@+id/tvEventDateEvent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/light_font"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"
-                android:text="@string/prompt_date2Event" />
-
-
-
-
-
-            <Button
-                android:id="@+id/participate_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_participateButton"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/modify_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_modifyButton"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/delete_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_deleteButton"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/commentaire_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Commentaire"
-                android:textStyle="bold" />
-            <ImageButton
-                android:id="@+id/imageBtnBackDetail"
-                android:layout_width="60dip"
-                android:layout_height="50dip"
-                android:layout_gravity="bottom|center"
-                android:onClick="detailBackonClick"
-                app:srcCompat="@drawable/back_btn" />
-
-
-        </LinearLayout>
-    </ScrollView>
-
-
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

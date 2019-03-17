@@ -10,11 +10,15 @@ public class Events {
     private String descritption;
     private String date_creation;
     private String date_event;
-    private int location;
+    private String date_updated;
+    private String  location;
+    private int latitude;
+    private int longitude;
+
 
     public Events(){ super();}
 
-    public Events(int id,int creator, String title, String descritption, String date_creation, String date_event, int location ){
+    public Events(int id,int creator, String title, String descritption, String date_creation, String date_event, String location ){
         super();
 
         this.id=id;
@@ -75,11 +79,35 @@ public class Events {
         this.date_event = date_event;
     }
 
-    public int getLocation() {
+    public String getDate_updated() {
+        return date_updated;
+    }
+
+    public void setDate_updated(String date_updated) {
+        this.date_updated = date_updated;
+    }
+
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(String location) {
         this.location = location;
+    }
+
+    public int getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(int latitude) {
+        this.latitude = latitude;
+    }
+
+    public int getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(int longitude) {
+        this.longitude = longitude;
     }
 }
