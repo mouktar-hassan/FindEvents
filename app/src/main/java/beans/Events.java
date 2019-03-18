@@ -12,8 +12,8 @@ public class Events {
     private String date_event;
     private String date_updated;
     private String  location;
-    private int latitude;
-    private int longitude;
+    private double latitude;
+    private double longitude;
 
 
     public Events(){ super();}
@@ -28,6 +28,14 @@ public class Events {
         this.date_creation=date_creation;
         this.date_event=date_event;
         this.location=location;
+    }
+
+    public Events(int id, String title, String location, double latitude, double longitude) {
+        this.id = id;
+        this.title = title;
+        this.location = location;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getId() {
@@ -95,19 +103,19 @@ public class Events {
         this.location = location;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
-        this.latitude = latitude;
-    }
-
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 }

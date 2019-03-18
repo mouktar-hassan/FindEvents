@@ -1045,6 +1045,7 @@ drawable add_icon
 drawable avd_hide_password
 drawable avd_show_password
 drawable back_btn
+drawable background
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1108,17 +1109,11 @@ drawable side_nav_bar
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
-id B_hopistals
-id B_restaurants
-id B_schools
-id B_search
-id B_to
 id CTRL
 id FUNCTION
 id META
 id SHIFT
 id SYM
-id TF_location
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1155,6 +1150,7 @@ id bottom
 id button
 id button2
 id button3
+id button4
 id buttonPanel
 id center
 id center_horizontal
@@ -1246,7 +1242,7 @@ id login_progress
 id main_rating
 id main_title
 id main_year
-id map
+id mapEvents
 id masked
 id message
 id middle
@@ -1431,6 +1427,7 @@ layout activity_custom_dialog
 layout activity_event
 layout activity_login
 layout activity_main
+layout activity_maps2
 layout activity_show_event_detail
 layout activity_show_events_list
 layout activity_sign_up
@@ -1584,6 +1581,7 @@ string prompt_description
 string prompt_descriptionEvent
 string prompt_email
 string prompt_locationname
+string prompt_maps
 string prompt_password
 string prompt_passwordConfirmation
 string prompt_pseudo
@@ -1596,6 +1594,7 @@ string status_bar_notification_info_overflow
 string title_activity_event
 string title_activity_login
 string title_activity_maps
+string title_activity_maps2
 string title_activity_show
 string title_activity_show_all
 string title_activity_sign_up

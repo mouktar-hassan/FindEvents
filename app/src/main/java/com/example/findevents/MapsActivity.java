@@ -1,9 +1,9 @@
 package com.example.findevents;
+
+
+
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -13,17 +13,21 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -31,15 +35,113 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.IOException;
-import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import beans.Events;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+
+    private static final String URL_DATA = "http://fullstackter.alwaysdata.net/api/events";
+
+    private ArrayList<Events> listeEvents;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps2);
+
+        listeEvents = new ArrayList<>();
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapEvents);
+        mapFragment.getMapAsync(this);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        loadEvents ();
+    }
+
+    private void loadEvents () {
+
+        // Initialize a new JsonArrayRequest instance
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                URL_DATA,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray array) {
+
+                        try{
+                            // Loop through the array elements
+                            for ( int i = 0; i<array.length(); i++) {
+
+                                // Get current json object
+                                JSONObject jsonObject = array.getJSONObject(i);
+
+                                Log.d("response", String.valueOf(jsonObject));
+
+                                Events event = new Events();
+                                event.setId(jsonObject.getInt("id"));
+
+                                event.setTitle(jsonObject.getString("title"));
+
+                                event.setLocation(jsonObject.getString("location_name"));
+                                event.setLatitude(jsonObject.getInt("latitude"));
+                                event.setLongitude(jsonObject.getInt("longitude"));
+
+                                listeEvents.add(event);
+                                Log.d("taille liste1", String.valueOf(listeEvents.size()));
+
+                            }
+
+                            for (Events evenement : listeEvents ) {
+                                LatLng location = new LatLng(evenement.getLatitude(), evenement.getLongitude());
+                                //mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()));
+                                mMap.addMarker(new MarkerOptions().position(location));
+                                //Pour zoomer l'emplacement juste sur la latitude et la longitude de Marseille
+                                // ( pour éviter à l'échelle mondiale)
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(43.300000,  5.400000)));
+                                mMap.resetMinMaxZoomPreference();
+                                //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, mMap.getCameraPosition().zoom));
+
+                            }
+
+                            Log.d("taille listef", String.valueOf(listeEvents.size()));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+    }
+}
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
+
+/*public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
-
 
     private GoogleMap mMap;
     private GoogleApiClient client;
@@ -47,18 +149,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Location lastlocation;
     private Marker currentLocationmMarker;
     public static final int REQUEST_LOCATION_CODE = 99;
-    int PROXIMITY_RADIUS = 10000;
-    double latitude,longitude;
+
+    private static final String URL_DATA = "http://fullstackter.alwaysdata.net/api/events";
+
+    private ArrayList<Events> listeEvents;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.activity_maps);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
             checkLocationPermission();
 
         }
+
+        listeEvents = new ArrayList<>();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -72,7 +180,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             case REQUEST_LOCATION_CODE:
                 if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 {
-                    if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) !=  PackageManager.PERMISSION_GRANTED)
+                    if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=  PackageManager.PERMISSION_GRANTED)
                     {
                         if(client == null)
                         {
@@ -85,48 +193,47 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 {
                     Toast.makeText(this,"Permission Denied" , Toast.LENGTH_LONG).show();
                 }
+                return;
         }
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+
+
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+        {
             bulidGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
+
+        //loadEvents ();
     }
 
-
     protected synchronized void bulidGoogleApiClient() {
-        client = new GoogleApiClient.Builder(this).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
+        client = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
         client.connect();
 
     }
 
     @Override
     public void onLocationChanged(Location location) {
-
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
         lastlocation = location;
         if(currentLocationmMarker != null)
         {
             currentLocationmMarker.remove();
-
         }
-        Log.d("lat = ",""+latitude);
-        LatLng latLng = new LatLng(location.getLatitude() , location.getLongitude());
+
+        LatLng latLng = new LatLng (location.getLatitude(),location.getLongitude());
+
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Current Location");
@@ -141,106 +248,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-
-
-    public void onClick(View v)
-    {
-        Object dataTransfer[] = new Object[2];
-        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
-
-        switch(v.getId())
-        {
-            case R.id.B_search:
-                EditText tf_location =  findViewById(R.id.TF_location);
-                String location = tf_location.getText().toString();
-                List<Address> addressList;
-
-
-                if(!location.equals(""))
-                {
-                    Geocoder geocoder = new Geocoder(this);
-
-                    try {
-                        addressList = geocoder.getFromLocationName(location, 5);
-
-                        if(addressList != null)
-                        {
-                            for(int i = 0;i<addressList.size();i++)
-                            {
-                                LatLng latLng = new LatLng(addressList.get(i).getLatitude() , addressList.get(i).getLongitude());
-                                MarkerOptions markerOptions = new MarkerOptions();
-                                markerOptions.position(latLng);
-                                markerOptions.title(location);
-                                mMap.addMarker(markerOptions);
-                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
-                            }
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                break;
-            case R.id.B_hopistals:
-                mMap.clear();
-                String hospital = "hospital";
-                String url = getUrl(latitude, longitude, hospital);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
-
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(MapsActivity.this, "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
-                break;
-
-
-            case R.id.B_schools:
-                mMap.clear();
-                String school = "school";
-                url = getUrl(latitude, longitude, school);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
-
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(MapsActivity.this, "Showing Nearby Schools", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.B_restaurants:
-                mMap.clear();
-                String resturant = "restuarant";
-                url = getUrl(latitude, longitude, resturant);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
-
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(MapsActivity.this, "Showing Nearby Restaurants", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.B_to:
-        }
-    }
-
-
-    private String getUrl(double latitude , double longitude , String nearbyPlace)
-    {
-
-        StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-        googlePlaceUrl.append("location="+latitude+","+longitude);
-        googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
-        googlePlaceUrl.append("&type="+nearbyPlace);
-        googlePlaceUrl.append("&sensor=true");
-        googlePlaceUrl.append("&key="+"AIzaSyBLEPBRfw7sMb73Mr88L91Jqh3tuE4mKsE");
-
-        Log.d("MapsActivity", "url = "+googlePlaceUrl.toString());
-
-        return googlePlaceUrl.toString();
-    }
-
-    @SuppressLint("RestrictedApi")
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-
         locationRequest = new LocationRequest();
-        //locationRequest.setInterval(100);
-        //locationRequest.setFastestInterval(1000);
-       // locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+        locationRequest.setInterval(100);
+        locationRequest.setFastestInterval(1000);
+        locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED)
@@ -248,7 +261,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LocationServices.FusedLocationApi.requestLocationUpdates(client, locationRequest, this);
         }
     }
-
 
     public boolean checkLocationPermission()
     {
@@ -271,11 +283,78 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+
     @Override
     public void onConnectionSuspended(int i) {
+
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
-}
+
+    private void loadEvents () {
+
+        // Initialize a new JsonArrayRequest instance
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                URL_DATA,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray array) {
+
+                        try{
+                            // Loop through the array elements
+                            for ( int i = 0; i<array.length(); i++) {
+
+                                // Get current json object
+                                JSONObject jsonObject = array.getJSONObject(i);
+
+                                Log.d("response", String.valueOf(jsonObject));
+
+                                Events event = new Events();
+                                event.setId(jsonObject.getInt("id"));
+
+                                event.setTitle(jsonObject.getString("title"));
+
+                                event.setLocation(jsonObject.getString("location_name"));
+                                event.setLatitude(jsonObject.getInt("latitude"));
+                                event.setLongitude(jsonObject.getInt("longitude"));
+
+                                listeEvents.add(event);
+                                Log.d("taille liste1", String.valueOf(listeEvents.size()));
+
+                            }
+
+
+
+                            for (Events evenement : listeEvents ) {
+                                LatLng location = new LatLng(evenement.getLatitude(), evenement.getLongitude());
+                                mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()));
+                            }
+
+                            Log.d("taille listef", String.valueOf(listeEvents.size()));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+    }
+
+
+}*/
+
+

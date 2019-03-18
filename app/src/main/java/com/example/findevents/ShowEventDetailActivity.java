@@ -32,7 +32,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
     private ImageButton mDetailBackBtn;
     private TextView textViewTitle,textViewDescription,textViewDateCreated,textViewDateEvent,textViewLocation;
     //TextView textComment;
-    private String url;
+    private String Messageurl, EventUrl;
     EditText subEditText;
     private Integer sEventId,sEventUser;
 
@@ -44,7 +44,8 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_event_detail);
         //getSupportActionBar().hide();
         //setSupportActionBar(content_detail_list);
-        url = "http://fullstackter.alwaysdata.net/api/messages";
+        Messageurl = "http://fullstackter.alwaysdata.net/api/messages";
+        EventUrl="http://fullstackter.alwaysdata.net/api/events/";
 
 
         //mDetailBackBtn=(ImageButton)findViewById(R.id.imageBtnBackDetail);
@@ -84,6 +85,22 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         fab_participate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                AlertDialog alertDialog = new AlertDialog.Builder(ShowEventDetailActivity.this).create();
+                alertDialog.setTitle("Voulez-vous supprimer ce évènement?");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Oui",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dialog.dismiss();
+                                  //deleteEvent (EventUrl+sEventId);
+                                  Intent i=new Intent(getApplicationContext(), MapsActivity.class);
+                                  startActivity(i);
+                                //Toast.makeText(getApplicationContext(), EventUrl+sEventId, Toast.LENGTH_LONG).show();
+
+
+                            }
+                        });
+                alertDialog.show();
                 Snackbar.make(view, "Supprimer", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -140,7 +157,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                 if (message.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Merci de saisir votre commentaire!", Toast.LENGTH_LONG).show();
                 } else {
-                    ajouterCommentaire(url);
+                    ajouterCommentaire(Messageurl);
                 }
 
             }
@@ -187,6 +204,68 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         };
         requestQueue.add(stringRequest);
     }
+
+    private void deleteEvent(String deleteURL){
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, deleteURL,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                        Log.d("Erreur de reponse  ", "Erreur1 \n" + error.toString());
+
+                    }
+                }
+        );
+        requestQueue.add(stringRequest);
+
+    }
+
+    /*
+    private void deleteEvent (String deleteURL){
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, deleteURL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //Toast.makeText(getApplicationContext(), "L'Évènement a été supprimé avec succès!!!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(ShowEventDetailActivity.this, ShowEventsListActivity.class));
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                Log.d("dqsdqsd ", "Erreur1 \n" + error.toString());
+            }
+        }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                //ID de l'évènement à supprimer
+                params.remove(sEventId);
+                Toast.makeText(getApplicationContext(), "L'Évènement a été supprimé avec succès!!!", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ShowEventDetailActivity.this, ShowEventsListActivity.class));
+
+
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }*/
+
+
 
     public void detailBackonClick(View view){
         ShowEventDetailActivity.this.finish();

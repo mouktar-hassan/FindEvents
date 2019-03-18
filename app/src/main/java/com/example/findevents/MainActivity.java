@@ -3,7 +3,6 @@ package com.example.findevents;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,6 +22,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -111,5 +112,10 @@ public class MainActivity extends AppCompatActivity
 
 
     public void onClick(View view) {
+    }
+
+    public void seeEvents(View view) {
+        Intent ievents=new Intent(getApplicationContext(), MapsActivity.class);
+        startActivity(ievents);
     }
 }

@@ -94,6 +94,7 @@ public class LoginActivity extends AppCompatActivity  {
                 public void onClick(View view) {
 
                     //récuperation des champs de text
+
                     final String pseudo = etpseudo.getText().toString();
                     final String password = etpassword.getText().toString();
 
@@ -124,8 +125,10 @@ public class LoginActivity extends AppCompatActivity  {
 
                                             //Toast.makeText(context, "login bien prise en compte, vous pouvez maintenant vous connecter", Toast.LENGTH_SHORT).show();
                                             //changement d'activity une fois connecté
-                                            Intent eventsActivity = new Intent(LoginActivity.this, ShowEventsListActivity.class);
-                                            LoginActivity.this.startActivity(eventsActivity);
+                                            Intent eventsActivity = new Intent(LoginActivity.this, MainActivity.class);
+                                            //LoginActivity.this.startActivity(eventsActivity);
+                                            startActivity(eventsActivity);
+                                            Toast.makeText(context, "Bienvenu cher(e) "+pseudo+"", Toast.LENGTH_SHORT).show();
 
                                             //Intent list = new Intent(context, ShowEventsListActivity.class);
                                             //context.startActivity(list);
@@ -168,6 +171,7 @@ public class LoginActivity extends AppCompatActivity  {
                         }
 
                     };
+
                     queue.add(postRequest);
 
                 } //fin onclick

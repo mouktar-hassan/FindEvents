@@ -7,6 +7,14 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="28" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -17,7 +25,6 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES" />
@@ -36,15 +43,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.findevents.ShowEventDetailActivity" />
-        <activity android:name="com.example.findevents.ShowEventsListActivity" />
-        <activity android:name="com.example.findevents.EventActivity" />
-        <activity
-            android:name="com.example.findevents.SignUp"
-            android:label="@string/title_activity_sign_up" />
-        <activity
-            android:name="com.example.findevents.LoginActivity"
-            android:label="@string/title_activity_login" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -59,16 +58,26 @@
 
         <activity
             android:name="com.example.findevents.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps2" />
+        <activity android:name="com.example.findevents.ShowEventDetailActivity" />
+        <activity android:name="com.example.findevents.ShowEventsListActivity" />
+        <activity android:name="com.example.findevents.EventActivity" />
         <activity
-            android:name="com.example.findevents.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name="com.example.findevents.SignUp"
+            android:label="@string/title_activity_sign_up" />
+        <activity
+            android:name="com.example.findevents.LoginActivity"
+            android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.findevents.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

@@ -63,6 +63,8 @@
     <string name="label_cancel">Annuler</string>
     <string name="label_report">Commentaire</string>
     <string name="label_type_your_comment">écrit ton commentaire</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="prompt_maps">Voir les évènements sur le Map</string>
 
 
 </resources>
