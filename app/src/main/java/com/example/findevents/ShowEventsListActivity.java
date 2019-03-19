@@ -32,7 +32,7 @@ import beans.Events;
 
 public class ShowEventsListActivity extends AppCompatActivity {
 
-    private String url = "http://fullstackter.alwaysdata.net/api/events?longitude=1&latitude=1&radius=1000";
+    private String url = "http://fullstackter.alwaysdata.net/api/events";
 
     private List<Events> eventsList;
 
