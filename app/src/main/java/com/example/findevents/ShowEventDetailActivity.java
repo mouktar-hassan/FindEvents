@@ -150,43 +150,25 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         });
 
         //Bouton pour Modifier
-        FloatingActionButton fab_update = (FloatingActionButton) findViewById(R.id.fabEdite);
-        fab_comment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Mofidier", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                //Pour lancer la méthode
-
-
-
-
-            }
-        });
-
-        //Bouton pour Modifier
-        FloatingActionButton fabDelete = (FloatingActionButton) findViewById(R.id.fabEdite);
-        fabDelete.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fabUpdate = (FloatingActionButton) findViewById(R.id.fabUpdate);
+        fabUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Modifier", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                //participateEvent(GuestsUrl);
-               // getGuestData();
-                if (isParticipated=false){
-                    participateEvent(GuestsUrl);
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Désolé, vous avez déjà participé ce évènement!!!", Toast.LENGTH_LONG).show();
 
-                }
-
-
-
-
-
+                Intent intent=new Intent(ShowEventDetailActivity.this,UpdateActivity.class);
+                intent.putExtra("id",sEventId);
+                intent.putExtra("title",stitle);
+                intent.putExtra("description",sdescription);
+                intent.putExtra("dateCreation",sDateCreated);
+                intent.putExtra("dateEvent",sDateEvent);
+                intent.putExtra("location",sLocation);
+                startActivity(intent);
             }
         });
+
+
 
 
     }

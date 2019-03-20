@@ -1143,6 +1143,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id annuler
 id async
 id auto
 id barrier
@@ -1170,8 +1171,10 @@ id coordinator
 id custom
 id customPanel
 id dark
+id dateEvent
 id decor_content_parent
 id default_activity_button
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1239,6 +1242,7 @@ id line1
 id line3
 id listMode
 id list_item
+id location
 id login
 id login_form
 id login_progress
@@ -1250,6 +1254,7 @@ id masked
 id message
 id middle
 id mini
+id modifier
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1355,6 +1360,7 @@ id textinput_helper_text
 id time
 id title
 id titleDividerNoCustom
+id titleEvent
 id title_template
 id toolbar
 id toolbarmessage
@@ -1438,6 +1444,7 @@ layout activity_message
 layout activity_show_event_detail
 layout activity_show_events_list
 layout activity_sign_up
+layout activity_update
 layout app_bar_main
 layout card_item
 layout content_detail_list
