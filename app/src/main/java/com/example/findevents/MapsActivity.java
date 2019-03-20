@@ -1,8 +1,9 @@
 package com.example.findevents;
 
 
-
 import android.Manifest;
+import android.content.Intent;
+import android.content.pm.LabeledIntent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -43,102 +44,8 @@ import java.util.ArrayList;
 
 import beans.Events;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
-    private GoogleMap mMap;
-
-    private static final String URL_DATA = "http://fullstackter.alwaysdata.net/api/events";
-
-    private ArrayList<Events> listeEvents;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps2);
-
-        listeEvents = new ArrayList<>();
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.mapEvents);
-        mapFragment.getMapAsync(this);
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-
-        loadEvents ();
-    }
-
-    private void loadEvents () {
-
-        // Initialize a new JsonArrayRequest instance
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
-                Request.Method.GET,
-                URL_DATA,
-                null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray array) {
-
-                        try{
-                            // Loop through the array elements
-                            for ( int i = 0; i<array.length(); i++) {
-
-                                // Get current json object
-                                JSONObject jsonObject = array.getJSONObject(i);
-
-                                Log.d("response", String.valueOf(jsonObject));
-
-                                Events event = new Events();
-                                event.setId(jsonObject.getInt("id"));
-
-                                event.setTitle(jsonObject.getString("title"));
-
-                                event.setLocation(jsonObject.getString("location_name"));
-                                event.setLatitude(jsonObject.getInt("latitude"));
-                                event.setLongitude(jsonObject.getInt("longitude"));
-
-                                listeEvents.add(event);
-                                Log.d("taille liste1", String.valueOf(listeEvents.size()));
-
-                            }
-
-                            for (Events evenement : listeEvents ) {
-                                LatLng location = new LatLng(evenement.getLatitude(), evenement.getLongitude());
-                                //mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()));
-                                mMap.addMarker(new MarkerOptions().position(location));
-                                //Pour zoomer l'emplacement juste sur la latitude et la longitude de Marseille
-                                // ( pour éviter à l'échelle mondiale)
-                                mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(43.300000,  5.400000)));
-                                mMap.resetMinMaxZoomPreference();
-                                //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, mMap.getCameraPosition().zoom));
-
-                            }
-
-                            Log.d("taille listef", String.valueOf(listeEvents.size()));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-    }
-}
-
-
-
-/*public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
+public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarkerClickListener,
+        OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
@@ -149,6 +56,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Location lastlocation;
     private Marker currentLocationmMarker;
     public static final int REQUEST_LOCATION_CODE = 99;
+    private Marker marker1;
+
+    int x;
 
     private static final String URL_DATA = "http://fullstackter.alwaysdata.net/api/events";
 
@@ -157,7 +67,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_maps2);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
@@ -169,7 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.mapEvents);
         mapFragment.getMapAsync(this);
     }
 
@@ -211,7 +121,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
         }
 
-        //loadEvents ();
+        loadEvents();
+
+        mMap.setOnMarkerClickListener(this);
     }
 
     protected synchronized void bulidGoogleApiClient() {
@@ -239,8 +151,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions.title("Current Location");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         currentLocationmMarker = mMap.addMarker(markerOptions);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,6));
+        //mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
 
         if(client != null)
         {
@@ -328,11 +240,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                             }
 
+                            LatLng positionActuelle = new LatLng(43.3422805, 5.4118102);
+                            //mMap.addMarker(new MarkerOptions().position(positionActuelle).title("Ma position actuelle"));
 
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionActuelle,6));
 
                             for (Events evenement : listeEvents ) {
                                 LatLng location = new LatLng(evenement.getLatitude(), evenement.getLongitude());
-                                mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()));
+
+                                marker1 = mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()).snippet(String.valueOf(evenement.getId())));
+                                marker1.setTag(0);
+
+                                //mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()));
                             }
 
                             Log.d("taille listef", String.valueOf(listeEvents.size()));
@@ -355,6 +274,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-}*/
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        //int clickCount = (int) marker.getTag();
+
+        Intent intent = new Intent(MapsActivity.this, ShowEventDetailActivity.class);
+        this.startActivity(intent);
+
+        intent.putExtra("id", marker.getSnippet());
 
 
+        return false;
+    }
+}

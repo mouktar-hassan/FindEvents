@@ -13,7 +13,6 @@ import com.example.findevents.R;
 import com.example.findevents.ShowEventDetailActivity;
 import com.example.findevents.ShowEventsListActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,8 +25,7 @@ public class CardsAdapter extends RecyclerView.Adapter<ViewHolder>{
     List<Events> list;
     public ShowEventsListActivity myaListActivity;
 
-
-    public CardsAdapter(Context context,List<Events> list)
+    public CardsAdapter(Context context, List<Events> list)
     {
         //ASSIGN THEM
         this.context = context;
@@ -35,6 +33,7 @@ public class CardsAdapter extends RecyclerView.Adapter<ViewHolder>{
         this.myaListActivity = myaListActivity;
 
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //INFLATE A VIEW FROM XML

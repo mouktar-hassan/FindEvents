@@ -3,6 +3,8 @@ package com.example.findevents;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Address;
+import android.location.Geocoder;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,14 +20,21 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import beans.User;
 
 
 public class EventActivity extends AppCompatActivity {
@@ -38,6 +47,10 @@ public class EventActivity extends AppCompatActivity {
     private View mProgressView,mLoginFormView;
     private Button bAddEvent;
     private ImageButton imageButtonBack;
+    private String UserUrl;
+    private Integer ConnectedUserId=0;
+    private Map<Integer,String> userparams;
+    private String EventUrl;
 
 
 
@@ -55,6 +68,12 @@ public class EventActivity extends AppCompatActivity {
         bAddEvent=(Button)findViewById(R.id.addEventbutton);
         imageButtonBack=(ImageButton)findViewById(R.id.imageBtnBackEvent);
 
+        EventUrl = "http://fullstackter.alwaysdata.net/api/events";
+
+        UserUrl="http://fullstackter.alwaysdata.net/api/users";
+
+        getUserData();
+
         bAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,10 +85,10 @@ public class EventActivity extends AppCompatActivity {
                 final String DateEvent=mDateEvent.getText().toString();
                 final String Adresse=mAdresse.getText().toString();
                 //récuperation des champs de text implicite( invisibles dans la formulaire d'ajoute d'évènement)
-                final String pcreator="14";
-                final String pLongitude="1";
-                final String pLatitude="1";
-                final String pDistance="8";
+                final String pcreator=ConnectedUserId.toString();
+                final String pLongitude="43";
+                final String pLatitude="5";
+
 
 
                 //vérification des user input
@@ -93,11 +112,11 @@ public class EventActivity extends AppCompatActivity {
 
                 if (isInputOk) {
                     //création de la requete
-                    String url = "http://fullstackter.alwaysdata.net/api/events?longitude=1&latitude=1&radius=1000";
+
 
                     RequestQueue queue = Volley.newRequestQueue(context);
 
-                    StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                    StringRequest postRequest = new StringRequest(Request.Method.POST, EventUrl,
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
@@ -152,7 +171,6 @@ public class EventActivity extends AppCompatActivity {
                             params.put("location_name", Adresse);
                             params.put("latitude", pLatitude);
                             params.put("longitude", pLongitude);
-                            params.put("distance", pDistance);
                             return params;
                         }
 
@@ -167,7 +185,92 @@ public class EventActivity extends AppCompatActivity {
 
     }
 
+    //Pour récuperer l'info de l'utilisateur connecté
+    private void getUserData() {
+
+
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(UserUrl, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        User user=new User();
+
+                        user.setU_id(jsonObject.getInt("id"));
+                        user.setU_pseudo(jsonObject.getString("pseudo"));
+                        userparams=new HashMap<>();
+                        userparams.put(user.getU_id(),user.getU_pseudo());
+                        //listUsers.add(user);
+                        SharedPreferences sharedpreferences = getSharedPreferences(LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                        // Reading from SharedPreferences
+                        String value = sharedpreferences.getString("pseudo", "");
+                        Log.d("mes preferences infos", value);
+                        if(user.getU_pseudo().equals(value)){
+                            //on récupere l'id de l'utilisateur connecté
+                            ConnectedUserId=user.getU_id();
+
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        //progressDialog.dismiss();
+                    }
+                }
+
+                //progressDialog.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Volley", error.toString());
+                Toast toast = Toast.makeText(getApplicationContext(), "Erreur de chargement", Toast.LENGTH_SHORT);
+                toast.show();
+                //progressDialog.dismiss();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+    }
+
     public void eventBackonClick(View view){
         EventActivity.this.finish();
     }
 }
+
+
+    /*public void GetLocationFromAddress(String strAddress,int id, GoogleMap googleMap)
+    {
+        Geocoder coder = new Geocoder(this);
+
+        List<Address> address = null;
+        MarkerOptions markerOptions = new MarkerOptions();
+        mar
+        markerOptions.SetSnippet(strAddress);
+        address = coder.GetFromLocationName(strAddress, 5);
+        if (address == null)
+        {
+            return;
+        }
+        else
+        {
+
+            for (int i = 0; i < address.Count; i++)
+            {
+                Address ad = address[i];
+
+                markerOptions.SetPosition(new LatLng(ad.Latitude, ad.Longitude));
+                markerOptions.SetTitle(listArtisan[id]);
+
+                googleMap.AddMarker(markerOptions);
+
+            }
+            googleMap.SetInfoWindowAdapter(this);
+
+
+        }
+
+    }*/

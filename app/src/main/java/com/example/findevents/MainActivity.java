@@ -98,7 +98,14 @@ public class MainActivity extends AppCompatActivity
             Intent showall =new Intent(MainActivity.this, ShowEventsListActivity.class);
             startActivity(showall);
 
-        } else if (id == R.id.nav_manage) {
+        }
+        else if (id==R.id.nav_comments){
+            Intent imessage=new Intent(MainActivity.this,MessageActivity.class);
+            startActivity(imessage);
+
+        }
+
+        else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 

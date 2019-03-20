@@ -6,20 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_login"
-            android:icon="@drawable/login_icon"
+            android:icon="@android:drawable/ic_lock_idle_lock"
             android:title="Login" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@android:drawable/ic_menu_edit"
             android:title="Inscription" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
             android:title="Liste d'evenement" />
         <item
+            android:id="@+id/nav_comments"
+            android:icon="@android:drawable/ic_popup_reminder"
+            android:title="Messages" />
+        <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Invité(e)s" />
     </group>
 
     <item android:title="Communicate">

@@ -59,7 +59,9 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity  {
 
-    Context context = this;
+    public static final String MyPREFERENCES = "MyPrefs" ;
+
+    public Context context = this;
 
     //EditText etpseudo;
     //EditText etpassword;
@@ -101,7 +103,7 @@ public class LoginActivity extends AppCompatActivity  {
                     //création de la requete
                     String url = "http://fullstackter.alwaysdata.net/api/login";
 
-                    RequestQueue  queue = Volley.newRequestQueue(context);
+                    RequestQueue  queue = Volley.newRequestQueue(getApplicationContext());
 
                     StringRequest  postRequest = new StringRequest(Request.Method.POST, url,
                             new Response.Listener<String>() {
@@ -112,10 +114,10 @@ public class LoginActivity extends AppCompatActivity  {
                                         JSONObject reponse = new JSONObject(response);
                                         if (reponse.has("token")) {
                                             Log.d("reponse login", response);
-                                            Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
 
                                             //remplissage des preference avec les info user
-                                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+                                            SharedPreferences preferences = getSharedPreferences(LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
                                             SharedPreferences.Editor editor = preferences.edit();
                                             editor.putString("pseudo", pseudo);
                                             editor.putString("password", password);
@@ -128,12 +130,12 @@ public class LoginActivity extends AppCompatActivity  {
                                             Intent eventsActivity = new Intent(LoginActivity.this, MainActivity.class);
                                             //LoginActivity.this.startActivity(eventsActivity);
                                             startActivity(eventsActivity);
-                                            Toast.makeText(context, "Bienvenu cher(e) "+pseudo+"", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "Bienvenu cher(e) "+pseudo+"", Toast.LENGTH_SHORT).show();
 
                                             //Intent list = new Intent(context, ShowEventsListActivity.class);
                                             //context.startActivity(list);
                                         } else {
-                                            Toast.makeText(context, "erreur identifiants", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "erreur identifiants", Toast.LENGTH_SHORT).show();
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -143,7 +145,7 @@ public class LoginActivity extends AppCompatActivity  {
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(context, "Problème de connexion, Vérifiez vos identifiants", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Problème de connexion, Vérifiez vos identifiants", Toast.LENGTH_SHORT).show();
                                 }
                             }
                     ) {
