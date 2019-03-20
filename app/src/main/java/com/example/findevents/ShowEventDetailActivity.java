@@ -150,6 +150,21 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         });
 
         //Bouton pour Modifier
+        FloatingActionButton fab_update = (FloatingActionButton) findViewById(R.id.fabEdite);
+        fab_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Mofidier", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                //Pour lancer la méthode
+
+
+
+
+            }
+        });
+
+        //Bouton pour Modifier
         FloatingActionButton fabDelete = (FloatingActionButton) findViewById(R.id.fabEdite);
         fabDelete.setOnClickListener(new View.OnClickListener() {
             @Override

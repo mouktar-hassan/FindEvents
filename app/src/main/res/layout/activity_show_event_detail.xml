@@ -30,6 +30,14 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/icon_delete" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="top|right"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/icon_edit" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabCommente"

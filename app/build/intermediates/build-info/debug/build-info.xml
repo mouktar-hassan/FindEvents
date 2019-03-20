@@ -5,28 +5,55 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
+    ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.3.2"
-    timestamp="1553074564766"
+    timestamp="1553077965430"
     token="-1222297080408706630"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="250" />
+        duration="422" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="20" />
+        duration="76" />
     <task
         name="verifier"
-        duration="3" />
+        duration="8" />
 
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
     <artifact
         location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
         type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
@@ -71,12 +98,39 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1553074564766"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1553077965430"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
         <artifact
             location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>
