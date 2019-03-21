@@ -106,8 +106,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"
                 android:text="@string/action_sign_up"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_connexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:textSize="16dp"
+                android:text="Se connecter ici >>>" />
 
             <ImageButton
                 android:id="@+id/imageBtnBackSignup"

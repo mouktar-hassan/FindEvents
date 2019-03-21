@@ -69,6 +69,16 @@ public class SignUp extends AppCompatActivity {
         final EditText pass_enregistrement = (EditText) findViewById(R.id.password);
         //final EditText pass2_enregistrement = (EditText) findViewById(R.id.passwordConfirmation);
 
+        TextView lien_se_connecter_enregistrement = (TextView) findViewById(R.id.textView_connexion);
+
+        lien_se_connecter_enregistrement.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent connectIntent = new Intent(SignUp.this, LoginActivity.class);
+                SignUp.this.startActivity(connectIntent);
+            }
+        });
+
 
         Button lien_register = findViewById(R.id.sign_up_button);
 

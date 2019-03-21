@@ -1351,6 +1351,8 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
+id textView_connexion
+id textView_enregistrement
 id text_input_password_toggle
 id text_subtitle
 id text_title

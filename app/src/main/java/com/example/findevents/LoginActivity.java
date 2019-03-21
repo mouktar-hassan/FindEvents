@@ -62,6 +62,8 @@ public class LoginActivity extends AppCompatActivity  {
     public static final String MyPREFERENCES = "MyPrefs" ;
 
     public Context context = this;
+    String valeur_token;
+
 
     //EditText etpseudo;
     //EditText etpassword;
@@ -72,10 +74,9 @@ public class LoginActivity extends AppCompatActivity  {
 
         //recuperation des preferences pour savoir si on est connecté
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        //final String token_type = preferences.getString("token_type", "none");
-        String access_token = preferences.getString("access_token", "none");
+        valeur_token = preferences.getString("valeur_token", "none");
 
-        if (access_token.equals("none")) {
+        if (valeur_token.equals("none")) {
             //si l'on est pas connecté
 
             setContentView(R.layout.activity_login);
@@ -88,6 +89,8 @@ public class LoginActivity extends AppCompatActivity  {
             //etpseudo = (EditText) findViewById(R.id.pseudo);
             final EditText etpassword = (EditText) findViewById(R.id.password);
             //etpassword = (EditText) findViewById(R.id.password);
+
+            final TextView lien_enregistrement = (TextView) findViewById(R.id.textView_enregistrement);
 
             Button lien_login = findViewById(R.id.login);
 
@@ -111,18 +114,23 @@ public class LoginActivity extends AppCompatActivity  {
                                 public void onResponse(String response) {
                                     Log.d("reponse login", response);
                                     try {
-                                        JSONObject reponse = new JSONObject(response);
-                                        if (reponse.has("token")) {
-                                            Log.d("reponse login", response);
-                                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                                        JSONObject resultat = new JSONObject(response);
+                                        if (resultat.has("token")) {
+                                            //Log.d("reponse login", response);
+                                            //Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+
+                                            valeur_token = resultat.getString("token");
+                                            //Toast.makeText(getApplicationContext(), valeur_token, Toast.LENGTH_SHORT).show();
+                                            Log.d("reponse login", valeur_token);
+
 
                                             //remplissage des preference avec les info user
-                                            SharedPreferences preferences = getSharedPreferences(LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+                                            //SharedPreferences preferences = getSharedPreferences(LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+                                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
                                             SharedPreferences.Editor editor = preferences.edit();
                                             editor.putString("pseudo", pseudo);
                                             editor.putString("password", password);
-                                            //editor.putString("token_type", token_type);
-                                            editor.putString("access_token", response);
+                                            editor.putString("valeur_token", valeur_token);
                                             editor.commit();
 
                                             //Toast.makeText(context, "login bien prise en compte, vous pouvez maintenant vous connecter", Toast.LENGTH_SHORT).show();
@@ -146,6 +154,13 @@ public class LoginActivity extends AppCompatActivity  {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     Toast.makeText(getApplicationContext(), "Problème de connexion, Vérifiez vos identifiants", Toast.LENGTH_SHORT).show();
+
+                                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putString("pseudo", "none");
+                                    editor.putString("password", "none");
+                                    editor.putString("valeur_token", "none");
+                                    editor.commit();
                                 }
                             }
                     ) {
@@ -154,14 +169,9 @@ public class LoginActivity extends AppCompatActivity  {
 
 
                             HashMap<String, String> headers = new HashMap<>();
-
-                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-                            String token_type = preferences.getString("token_type", "none");
-                            String access_token = preferences.getString("access_token", "none");
-
                             headers.put("Content-Type", "application/x-www-form-urlencoded");
-                            headers.put("Authorization", token_type + " " + access_token);
-                            //headers.put("Authorization", "Bearer" + " " + access_token);
+                            //headers.put("Authorization", token_type + " " + access_token);
+                            headers.put("Authorization", "Bearer" + " " + valeur_token);
                             return headers;
 
                         }
@@ -178,11 +188,20 @@ public class LoginActivity extends AppCompatActivity  {
 
                 } //fin onclick
             }); // fin lien login
+
+            //click sur le lien d'enregistrement
+            lien_enregistrement.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent registerIntent = new Intent(LoginActivity.this, SignUp.class);
+                    LoginActivity.this.startActivity(registerIntent);
+                }
+            });
         }// fin if
 
         else {
             //si l'on est connecté
-            Log.d("preferences", access_token);
+            Log.d("preferences", valeur_token);
             Toast.makeText(this, "vous etes déja connecté.", Toast.LENGTH_LONG).show();
 
             Intent eventsActivity = new Intent(LoginActivity.this, MainActivity.class);
@@ -191,7 +210,6 @@ public class LoginActivity extends AppCompatActivity  {
         }
 
     }// fin on create
-
 
 }
 

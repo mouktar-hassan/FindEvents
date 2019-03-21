@@ -1,7 +1,9 @@
 package com.example.findevents;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -12,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -86,13 +89,30 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        //recuperation des preferences pour savoir si on est connecté
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String valeur_token = preferences.getString("valeur_token", "none");
+
         if (id == R.id.nav_login) {
-            // Handle the camera action
-            Intent login =new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(login);
+            if (valeur_token.equals("none")) {
+                //si l'on est pas connecté
+                // Handle the camera action
+                Intent login =new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(login);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Vous etes déja connécté", Toast.LENGTH_SHORT).show();
+            }
+
         } else if (id == R.id.nav_gallery) {
-            Intent signup =new Intent(MainActivity.this, SignUp.class);
-            startActivity(signup);
+            if (valeur_token.equals("none")) {
+                //si l'on est pas connecté
+                Intent signup =new Intent(MainActivity.this, SignUp.class);
+                startActivity(signup);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Vous etes déja connécté", Toast.LENGTH_SHORT).show();
+            }
 
         } else if (id == R.id.nav_slideshow) {
             Intent showall =new Intent(MainActivity.this, ShowEventsListActivity.class);
@@ -100,9 +120,14 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id==R.id.nav_comments){
-            Intent imessage=new Intent(MainActivity.this,MessageActivity.class);
-            startActivity(imessage);
-
+            if (valeur_token.equals("none")) {
+                //si l'on est pas connecté
+                Toast.makeText(getApplicationContext(), "Vous devez vous connecter pour consulter les messages", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Intent imessage=new Intent(MainActivity.this,MessageActivity.class);
+                startActivity(imessage);
+            }
         }
 
         else if (id == R.id.nav_manage) {

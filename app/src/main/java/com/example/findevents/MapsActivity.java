@@ -240,7 +240,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
 
                             }
 
-                            LatLng positionActuelle = new LatLng(43.3422805, 5.4118102);
+                            LatLng positionActuelle = new LatLng(43.296482, 5.36978);
                             //mMap.addMarker(new MarkerOptions().position(positionActuelle).title("Ma position actuelle"));
 
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionActuelle,6));
