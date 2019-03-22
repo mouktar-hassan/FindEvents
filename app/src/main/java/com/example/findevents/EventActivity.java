@@ -14,6 +14,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -43,7 +44,7 @@ public class EventActivity extends AppCompatActivity {
 
     // UI references.
     private AutoCompleteTextView mTitle;
-    private EditText mDescription,mDateCreation,mDateEvent,mAdresse;
+    private EditText mDescription,mDateEvent,mAdresse,mLatitude,mLongtitude;
     private View mProgressView,mLoginFormView;
     private Button bAddEvent;
     private ImageButton imageButtonBack;
@@ -67,6 +68,9 @@ public class EventActivity extends AppCompatActivity {
         //mAdresse.setOnClickListener(adresseListener);
         bAddEvent=(Button)findViewById(R.id.addEventbutton);
         imageButtonBack=(ImageButton)findViewById(R.id.imageBtnBackEvent);
+        mLatitude=(EditText) findViewById(R.id.eventLatitude);
+        mLongtitude=(EditText)findViewById(R.id.eventLatitude);
+
 
         EventUrl = "http://fullstackter.alwaysdata.net/api/events";
 
@@ -84,10 +88,13 @@ public class EventActivity extends AppCompatActivity {
                 final String description=mDescription.getText().toString();
                 final String DateEvent=mDateEvent.getText().toString();
                 final String Adresse=mAdresse.getText().toString();
+                final double Latitude=Double.valueOf(mLatitude.getText().toString());
+                final double Longtitude=Double.valueOf(mLongtitude.getText().toString());
+
                 //récuperation des champs de text implicite( invisibles dans la formulaire d'ajoute d'évènement)
                 final String pcreator=ConnectedUserId.toString();
-                final String pLongitude="43";
-                final String pLatitude="5";
+                //final String pLongitude="43";
+                //final String pLatitude="5";
 
 
 
@@ -109,6 +116,7 @@ public class EventActivity extends AppCompatActivity {
                     Toast.makeText(context, "Vous devez entrer une Adresse exacte!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
                 }
+
 
                 if (isInputOk) {
                     //création de la requete
@@ -169,8 +177,8 @@ public class EventActivity extends AppCompatActivity {
                             params.put("description", description);
                             params.put("date_event", DateEvent);
                             params.put("location_name", Adresse);
-                            params.put("latitude", pLatitude);
-                            params.put("longitude", pLongitude);
+                            params.put("latitude", Double.toString(Latitude));
+                            params.put("longitude", Double.toString(Longtitude));
                             return params;
                         }
 

@@ -1197,6 +1197,8 @@ id enterAlwaysCollapsed
 id eventAdresse
 id eventDateEvent
 id eventDescription
+id eventLatitude
+id eventLongitude
 id eventTitle
 id event_add_form
 id exitUntilCollapsed
@@ -1598,7 +1600,9 @@ string prompt_dateEvent
 string prompt_description
 string prompt_descriptionEvent
 string prompt_email
+string prompt_latitude
 string prompt_locationname
+string prompt_longtitude
 string prompt_maps
 string prompt_password
 string prompt_passwordConfirmation

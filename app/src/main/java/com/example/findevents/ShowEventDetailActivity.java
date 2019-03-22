@@ -55,13 +55,16 @@ public class ShowEventDetailActivity extends AppCompatActivity {
     private Map<Integer,Integer> guestparams;
     boolean isParticipated;
 
-    private static final String URL_CURRENT_USER = "http://fullstackter.alwaysdata.net/api/user";
-
     private static final String URL_POST_GUEST = "http://fullstackter.alwaysdata.net/api/guests";
     public Context context = this;
 
-    int idCurrentUser;
-    String pseudoCurrentUser;
+    private String URL_VERS_GUEST = "http://fullstackter.alwaysdata.net/api/guests/";
+
+    private ArrayList<Guests> listegGuestsByEvent;
+    private ArrayList<Guests> listegParticipationGuest;
+    int IdConnecte;
+
+    FloatingActionButton fab_participate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,18 +85,25 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         textViewDateEvent=(TextView)findViewById(R.id.tvDate_Event);
         textViewLocation=(TextView)findViewById(R.id.tvEventLocation);
 
+        listegGuestsByEvent = new ArrayList<>();
+        listegParticipationGuest = new ArrayList<>();
+
         listUsers=new ArrayList<>();
         //au débart c'est false
         //isParticipated=false;
         //pour récuperer l'info de l'utilisateur connecté
-        getUserData();
 
-        getGuestData();
+
+        //Récupérer l'ID DU user connécté
+        IdConnecte = getIdUtilisateurConnecte();
+        //Toast.makeText(getApplicationContext(), String.valueOf(IdConnecte), Toast.LENGTH_LONG).show();
+
+        //getUserData();
 
         //getGuestData();
 
 
-
+        //getGuestData();
 
         //textComment=(TextView) findViewById(R.id.edt_comment) ;
 
@@ -116,17 +126,18 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         textViewDateEvent.setText("Date de l'évènement: "+sDateEvent);
         textViewLocation.setText("Lieu: "+sLocation);
 
-        FloatingActionButton fab_participate = (FloatingActionButton) findViewById(R.id.fabEdite);
+        fab_participate = (FloatingActionButton) findViewById(R.id.fabEdite);
         fab_participate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 AlertDialog alertDialog = new AlertDialog.Builder(ShowEventDetailActivity.this).create();
-                alertDialog.setTitle("Voulez-vous participer à cet évènement?");
+                alertDialog.setTitle("Voulez-vous gérer votre participation?");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Oui",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                participateEvent();
+                                //participateEvent();
+                                //nePlusParticiper();
+                                testCurrentUserParticipeOuNon();
                             }
                         });
                 alertDialog.show();
@@ -144,25 +155,26 @@ public class ShowEventDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 AlertDialog alertDialog = new AlertDialog.Builder(ShowEventDetailActivity.this).create();
-                alertDialog.setTitle("Voulez-vous supprimer ce évènement?");
+                alertDialog.setTitle("Voulez-vous vraiment supprimer cet évènement?");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Oui",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                //dialog.dismiss();
+                                dialog.dismiss();
                                 //deleteEvent (EventUrl+sEventId);
                                 Boolean testequivalence = testCreateurEstUserConnecte ();
                                 if (testequivalence==true){
                                     deleteEvent (EventUrl+sEventId);
-                                    //Toast.makeText(getApplicationContext(), "Veuillez rafraichir la page !!", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(ShowEventDetailActivity.this, MainActivity.class);
+                                    startActivity(intent);
                                 }
                                 else {
-                                    Toast.makeText(getApplicationContext(), "Veuillez ré-appuyer sur le boutton supprimer pour confirmer votre suppression !! Vérifiez que vous etes bien le createur pour pouvoir supprimer !!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Vérifiez que vous etes bien le createur pour pouvoir supprimer !!", Toast.LENGTH_LONG).show();
                                 }
                             }
                         });
                 alertDialog.show();
                 //Snackbar.make(view, "Supprimer", Snackbar.LENGTH_LONG)
-                        //.setAction("Action", null).show();
+                //.setAction("Action", null).show();
             }
         });
 
@@ -209,22 +221,18 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Veuillez ré-appuyer sur le boutton modifier pour accéder à la page modification!! Vérifiez que vous etes bien le createur pour pouvoir modifier !!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Vérifiez que vous etes bien le createur pour pouvoir modifier !!", Toast.LENGTH_LONG).show();
                 }
 
             }
         });
-
-
-
-
     }
 
     //Pour lancer le dialogue d'ajoute de commentaire
     private void openDialog(){
         LayoutInflater inflater = LayoutInflater.from(ShowEventDetailActivity.this);
         View subView = inflater.inflate(R.layout.activity_custom_dialog, null);
-         subEditText = (EditText)subView.findViewById(R.id.edt_comment);
+        subEditText = (EditText)subView.findViewById(R.id.edt_comment);
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -301,7 +309,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         // response
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Evénement bien supprimé", Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener()
@@ -310,12 +318,10 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
                         Log.d("Erreur de reponse  ", "Erreur1 \n" + error.toString());
-
                     }
                 }
         );
         requestQueue.add(stringRequest);
-
     }
 
 
@@ -384,9 +390,6 @@ public class ShowEventDetailActivity extends AppCompatActivity {
 
     //pour récuper l'information des invités en vérifiant si l'utilisation a participé l' évènement en question ou pas
     private void getGuestData() {
-
-
-
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(GuestsUrl, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -437,6 +440,9 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         requestQueue.add(jsonArrayRequest);
     }
 
+
+    //*********************************************************
+
     //Pour participer un évènement
     private void participateEvent (){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -445,13 +451,13 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(getApplicationContext(), "Votre participation a été validée avec succès!", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(ShowEventDetailActivity.this, ShowEventsListActivity.class));
+                        startActivity(new Intent(ShowEventDetailActivity.this, MainActivity.class));
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 //Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "Veuillez ré-appuyer sur le boutton Participation pour confirmer votre participation", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Une erreur est survenue", Toast.LENGTH_LONG).show();
                 Log.d("dqsdqsd ", "Erreur1 \n" + error.toString());
             }
         })
@@ -464,9 +470,8 @@ public class ShowEventDetailActivity extends AppCompatActivity {
 
             }
             protected Map<String, String> getParams() {
-                int idDuUserConnecte = getGetCurrentUser();
                 Map<String, String> params = new HashMap<>();
-                params.put("user", String.valueOf(idDuUserConnecte));
+                params.put("user", String.valueOf(IdConnecte));
                 params.put("event", String.valueOf(sEventId));
                 return params;
             }
@@ -475,61 +480,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
     }
 
 
-    private int getGetCurrentUser() {
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_CURRENT_USER,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("reponse", response);
-
-                        try {
-                            JSONObject jsonObject1 = new JSONObject(response);
-                            JSONObject jsonObject2 = jsonObject1.getJSONObject("user");
-
-                            Log.d("response", String.valueOf(jsonObject2));
-
-                            idCurrentUser = jsonObject2.getInt("id");
-                            pseudoCurrentUser = jsonObject2.getString("pseudo");
-
-                            Log.d("valeurs", pseudoCurrentUser + " " + String.valueOf(idCurrentUser));
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("error recup", error.getMessage());
-                    }
-                })
-        {
-            @Override
-            public Map<String,String> getHeaders() throws AuthFailureError {
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-                HashMap<String,String> headers = new HashMap<>();
-
-                //headers.put("Authorization", token_type + " " + access_token);
-                //String x ="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjAxYjQ3Y2E4YmNiOWQ1YzNkNDJlOGY0MjcxNDBiYTk3YTcwZTRlMjljYjNlZjZkZWRjMDM4NDc3MmI2NjVkZWQwMzIzNDk4ZTYxOGFiNmIwIn0.eyJhdWQiOiIxIiwianRpIjoiMDFiNDdjYThiY2I5ZDVjM2Q0MmU4ZjQyNzE0MGJhOTdhNzBlNGUyOWNiM2VmNmRlZGMwMzg0NzcyYjY2NWRlZDAzMjM0OThlNjE4YWI2YjAiLCJpYXQiOjE1NTMxMDE3NzQsIm5iZiI6MTU1MzEwMTc3NCwiZXhwIjoxNTg0NzI0MTc0LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.EizSefhUAt3-Omn9_SZzmI8yt3lY7JjxO74FufT3bNlgfX8pPB3wlwMDncQm4LcT77upAYHLOsrvbT1OZpyboTe_jBGwY7ocy97PIODB7V3Iu64VQBMHxtB_zwvtXBMLlAomMtHR5XXmWs7Cv-rGB6WKHGilEhxLgxk3gKURKVbm65RvNOX1ty4JJu7QhMjcv5B_a_TXQJ30KU9UWXU0nCZorR6NADm24-ARuU80jrgHmXlnIRq3-lAwYww7s7jM32gkWTy4sBP0CN-NrBJMXsMWmdwIlmTpKIaG1iQ6Fe2vDzlBuP1wYQtBiAsz2Cje2F2zltsVOWNJThAvce2Nag8-0gjPhO8YAIUymFbIdz6GivLRSl9jb3kGYWI6y_8uSPtnxSo2HuKwwWU-vPvnI774TRaMIlmOtakFq8888WMJXn0n03JSW14gfNiVa1uX58qpc6S3EUrM8Xyk-11TlAns06y14_QEVIaPQrWI5jhgsTz6SDUIh-KdKSFhB2NK7GlU-hmDQ-u9LSvzu9BOCW91zS8-yiz4g95VfJEzEbwZXTL1lN6JsPscnXnjdhn_U4PTYD4i3QGu0qblNnGuUVvaaTWgPIniqhjBOS6ohz-eDzUAP5zNdqnchhSwSAqFImI6p6_fhMjLVhTOv9kT5WuvcurJWGfvqHdchP-uS8o";
-                String ajouterTokeN = getAccessToken();
-                headers.put("Content-Type", "application/json");
-                headers.put("Accept", "application/json");
-                headers.put("Authorization", "Bearer" + " " + ajouterTokeN);
-                return headers;
-            }
-        };
-        queue.add(stringRequest);
-        return idCurrentUser;
-    }
-
-    public String getAccessToken (){
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String leTokenEst = preferences.getString("valeur_token", "none");
-        return leTokenEst;
-    }
+    //*********************************************************
 
     private int getIdCreator(){
         if (getIntent().hasExtra("pcreator")){
@@ -541,13 +492,165 @@ public class ShowEventDetailActivity extends AppCompatActivity {
     }
 
     private Boolean testCreateurEstUserConnecte (){
-        int idDuUserConnecte =getGetCurrentUser() ;
         int idDuCreateur = getIdCreator();
-        if (idDuCreateur==idDuUserConnecte){
+        if (idDuCreateur==IdConnecte) {
             return true;
         }
         else {
             return false;
         }
+    }
+
+    //*********************************************************
+
+    private void nePlusParticiper () {
+        String url = URL_VERS_GUEST+sEventId;
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray array) {
+
+                        try{
+
+                            for ( int i = 0; i<array.length(); i++) {
+
+                                // Get current json object
+                                JSONObject jsonObject = array.getJSONObject(i);
+
+                                Log.d("response", String.valueOf(jsonObject));
+
+                                Guests guest = new Guests();
+                                guest.setG_id(jsonObject.getInt("id"));
+                                guest.setG_user(jsonObject.getInt("user"));
+                                guest.setG_event(jsonObject.getInt("event"));
+                                listegGuestsByEvent.add(guest);
+                            }
+                            for (Guests invite : listegGuestsByEvent ) {
+                                if (invite.getG_user()==IdConnecte){
+                                    deleteGuest(URL_VERS_GUEST+invite.getG_id());
+                                    Toast.makeText(getApplicationContext(), "Dommage de vous voir abondonner votre participation", Toast.LENGTH_LONG).show();
+                                }
+                                /*else {
+                                    Toast.makeText(getApplicationContext(), "Une erreur est survenue lors de votre abondant de l'évent", Toast.LENGTH_LONG).show();
+                                }*/
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+    }
+
+    private void deleteGuest(String deleteGUEST){
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, deleteGUEST,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(ShowEventDetailActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                        Log.d("Erreur de reponse  ", "Erreur1 \n" + error.toString());
+                    }
+                }
+        );
+        requestQueue.add(stringRequest);
+
+    }
+
+    //*************************************************************
+
+    public int getIdUtilisateurConnecte (){
+        SharedPreferences preferencesCurent = PreferenceManager.getDefaultSharedPreferences(this);
+        String LYDIY = preferencesCurent.getString("idCurrentUser", "none");
+        int valeur = Integer.parseInt(LYDIY);
+        return valeur;
+    }
+
+    //**************************************************************
+
+    private void testCurrentUserParticipeOuNon () {
+
+        int courrantUSER = getIdUtilisateurConnecte();
+        String url = URL_VERS_GUEST+sEventId+"?user="+courrantUSER;
+
+        Log.d("reponse login", url);
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray array) {
+                        if (array.length()==0){
+
+                            participateEvent();
+                            //fab_participate.setImageResource(R.drawable.icon_parti);
+                            //Toast.makeText(getApplicationContext(), "vous ne participez pas", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            try{
+                                JSONObject jsonObject = array.getJSONObject(0);
+                                Log.d("reponse json", jsonObject.toString());
+                                if(jsonObject.has("id")){
+                                    nePlusParticiper();
+                                    //fab_participate.setImageResource(R.drawable.ic_action_desabonner);
+                                    //Toast.makeText(getApplicationContext(), "vous participez déja", Toast.LENGTH_LONG).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }}
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws com.android.volley.AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+           /*protected Map<String, String> getParams() {
+               int courrantUSER = getIdUtilisateurConnecte();
+               Map<String, String> params = new HashMap<String, String>();
+               params.put("user", String.valueOf(courrantUSER));
+               return params;
+           }*/
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
     }
 }
