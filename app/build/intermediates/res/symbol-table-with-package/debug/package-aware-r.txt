@@ -1383,6 +1383,7 @@ id tvDate_Created
 id tvDate_Event
 id tvEventDescription
 id tvEventLocation
+id tvEventNbParticipants
 id tvEventTitle
 id tvPeudoUser
 id tv_static_txt

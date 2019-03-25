@@ -5620,20 +5620,21 @@ public final class R {
     public static final int tvDate_Event=0x7f08010d;
     public static final int tvEventDescription=0x7f08010e;
     public static final int tvEventLocation=0x7f08010f;
-    public static final int tvEventTitle=0x7f080110;
-    public static final int tvPeudoUser=0x7f080111;
-    public static final int tv_static_txt=0x7f080112;
-    public static final int uniform=0x7f080113;
-    public static final int unlabeled=0x7f080114;
-    public static final int up=0x7f080115;
-    public static final int useLogo=0x7f080116;
-    public static final int userPseudo=0x7f080117;
-    public static final int view_offset_helper=0x7f080118;
-    public static final int visible=0x7f080119;
-    public static final int wide=0x7f08011a;
-    public static final int withText=0x7f08011b;
-    public static final int wrap=0x7f08011c;
-    public static final int wrap_content=0x7f08011d;
+    public static final int tvEventNbParticipants=0x7f080110;
+    public static final int tvEventTitle=0x7f080111;
+    public static final int tvPeudoUser=0x7f080112;
+    public static final int tv_static_txt=0x7f080113;
+    public static final int uniform=0x7f080114;
+    public static final int unlabeled=0x7f080115;
+    public static final int up=0x7f080116;
+    public static final int useLogo=0x7f080117;
+    public static final int userPseudo=0x7f080118;
+    public static final int view_offset_helper=0x7f080119;
+    public static final int visible=0x7f08011a;
+    public static final int wide=0x7f08011b;
+    public static final int withText=0x7f08011c;
+    public static final int wrap=0x7f08011d;
+    public static final int wrap_content=0x7f08011e;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;

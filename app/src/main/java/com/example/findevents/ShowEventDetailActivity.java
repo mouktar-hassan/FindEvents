@@ -45,7 +45,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
 
     //UI Design
     private ImageButton mDetailBackBtn;
-    private TextView textViewTitle,textViewDescription,textViewDateCreated,textViewDateEvent,textViewLocation;
+    private TextView textViewTitle,textViewDescription,textViewDateCreated,textViewDateEvent,textViewLocation,textViewNbParticipants;
     //TextView textComment;
     private String Messageurl, EventUrl,GuestsUrl,UserUrl;
     EditText subEditText;
@@ -84,6 +84,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         textViewDateCreated=(TextView)findViewById(R.id.tvDate_Created);
         textViewDateEvent=(TextView)findViewById(R.id.tvDate_Event);
         textViewLocation=(TextView)findViewById(R.id.tvEventLocation);
+        textViewNbParticipants=(TextView)findViewById(R.id.tvEventNbParticipants);
 
         listegGuestsByEvent = new ArrayList<>();
         listegParticipationGuest = new ArrayList<>();
@@ -115,6 +116,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         final String sDateCreated=myintent.getExtras().getString("pcreated_at");
         final String sDateEvent=myintent.getExtras().getString("pdateEvent");
         final String sLocation=myintent.getExtras().getString("plocation");
+        final int sNbParticipants=myintent.getExtras().getInt("pguests_number");
         sEventId=myintent.getExtras().getInt("pid");
         sEventUser=myintent.getExtras().getInt("pcreator");
 
@@ -125,6 +127,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         textViewDateCreated.setText("Date de Création: "+sDateCreated);
         textViewDateEvent.setText("Date de l'évènement: "+sDateEvent);
         textViewLocation.setText("Lieu: "+sLocation);
+        textViewNbParticipants.setText("Participants:"+sNbParticipants);
 
         fab_participate = (FloatingActionButton) findViewById(R.id.fabEdite);
         fab_participate.setOnClickListener(new View.OnClickListener() {

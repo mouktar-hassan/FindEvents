@@ -112,6 +112,7 @@ public class ShowEventsListActivity extends AppCompatActivity {
                         event.setLocation(jsonObject.getString("location_name"));
                         event.setLatitude(jsonObject.getInt("latitude"));
                         event.setLongitude(jsonObject.getInt("longitude"));
+                        event.setGuests_number(jsonObject.getInt("guests_number"));
 
 
 

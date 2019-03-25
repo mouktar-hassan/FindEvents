@@ -78,6 +78,7 @@ public class CardsAdapter extends RecyclerView.Adapter<ViewHolder>{
                 i.putExtra("platitude",events.getLatitude());
                 i.putExtra("plongitude",events.getLongitude());
                 i.putExtra("plocation",events.getLocation());
+                i.putExtra("pguests_number",events.getGuests_number());
                 //i.putExtra("Image",images[position]);
 
                 //START DETAIL ACTIVITY
