@@ -32,6 +32,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import beans.GeocodingLocation;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -156,6 +158,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(iprofil);
 
         } else if (id == R.id.nav_share) {
+
 
         } else if (id == R.id.nav_send) {
 

@@ -1217,6 +1217,7 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id getLatLng
 id ghost_view
 id gone
 id group_divider
@@ -1541,6 +1542,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_Eventbutton
 string action_deleteButton
+string action_getLatLngButton
 string action_modifyButton
 string action_participateButton
 string action_settings

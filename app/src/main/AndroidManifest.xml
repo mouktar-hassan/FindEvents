@@ -27,7 +27,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfilActivity"></activity>
+        <activity android:name=".ProfilActivity" />
         <activity android:name=".UpdateActivity" />
         <activity android:name=".MessageActivity" />
         <!--

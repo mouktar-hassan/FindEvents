@@ -100,6 +100,14 @@
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+            <Button
+                android:id="@+id/getLatLng"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/action_getLatLngButton"
+                android:textStyle="bold" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -111,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_latitude"
                     android:imeActionId="6"
+                    android:editable="false"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="text"
@@ -129,6 +138,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_longtitude"
                     android:imeActionId="6"
+                    android:editable="false"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="text"
@@ -136,26 +146,6 @@
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
-
-           <!-- <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/eventAdresse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_adresse"
-                    android:imeActionId="6"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="text"
-                    android:focusableInTouchMode="false"
-                    android:editable="false"
-                    android:maxLines="4"
-                    android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>-->
 
 
 

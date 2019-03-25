@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import beans.GeocodingLocation;
 import beans.User;
 
 
@@ -46,7 +49,7 @@ public class EventActivity extends AppCompatActivity {
     private AutoCompleteTextView mTitle;
     private EditText mDescription,mDateEvent,mAdresse,mLatitude,mLongtitude;
     private View mProgressView,mLoginFormView;
-    private Button bAddEvent;
+    private Button bAddEvent,bGetLatLng;
     private ImageButton imageButtonBack;
     private String UserUrl;
     private Integer ConnectedUserId=0;
@@ -67,14 +70,31 @@ public class EventActivity extends AppCompatActivity {
         mAdresse=(EditText)findViewById(R.id.eventAdresse);
         //mAdresse.setOnClickListener(adresseListener);
         bAddEvent=(Button)findViewById(R.id.addEventbutton);
+        bGetLatLng=(Button)findViewById(R.id.getLatLng);
         imageButtonBack=(ImageButton)findViewById(R.id.imageBtnBackEvent);
         mLatitude=(EditText) findViewById(R.id.eventLatitude);
-        mLongtitude=(EditText)findViewById(R.id.eventLatitude);
+        mLongtitude=(EditText)findViewById(R.id.eventLongitude);
+        mLatitude.setEnabled(false);
+        mLongtitude.setEnabled(false);
 
 
         EventUrl = "http://fullstackter.alwaysdata.net/api/events?longitude=44&latitude=44&radius=100000";
 
         UserUrl="http://fullstackter.alwaysdata.net/api/users";
+
+
+        //Bouton pour récuperer la latitude et la longitude de l'adresse saisie
+        bGetLatLng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+
+                String address = mAdresse.getText().toString();
+
+                GeocodingLocation locationAddress = new GeocodingLocation();
+                locationAddress.getAddressFromLocation(address,
+                        getApplicationContext(), new GeocoderHandler());
+            }
+        });
 
         //getUserData();
 
@@ -300,38 +320,31 @@ public class EventActivity extends AppCompatActivity {
     public void eventBackonClick(View view){
         EventActivity.this.finish();
     }
+
+
+    //Classe pour la manupilation du géocodage
+     class GeocoderHandler extends Handler {
+        @Override
+        public void handleMessage(Message message) {
+            String result;
+            switch (message.what) {
+                case 1:
+                    Bundle bundle = message.getData();
+                    result = bundle.getString("addressLatLng");
+
+                    break;
+                default:
+                    result = null;
+
+            }
+
+            final String SEPARATEUR = ",";
+            //pour découper la résultat en Lat et en Lng
+            String motsLatLng[] = result.split(SEPARATEUR);
+                mLatitude.setText(motsLatLng[0]);
+                mLongtitude.setText(motsLatLng[1]);
+        }
+    }
 }
 
 
-    /*public void GetLocationFromAddress(String strAddress,int id, GoogleMap googleMap)
-    {
-        Geocoder coder = new Geocoder(this);
-
-        List<Address> address = null;
-        MarkerOptions markerOptions = new MarkerOptions();
-        mar
-        markerOptions.SetSnippet(strAddress);
-        address = coder.GetFromLocationName(strAddress, 5);
-        if (address == null)
-        {
-            return;
-        }
-        else
-        {
-
-            for (int i = 0; i < address.Count; i++)
-            {
-                Address ad = address[i];
-
-                markerOptions.SetPosition(new LatLng(ad.Latitude, ad.Longitude));
-                markerOptions.SetTitle(listArtisan[id]);
-
-                googleMap.AddMarker(markerOptions);
-
-            }
-            googleMap.SetInfoWindowAdapter(this);
-
-
-        }
-
-    }*/
