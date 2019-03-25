@@ -151,7 +151,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
         markerOptions.title("Current Location");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         currentLocationmMarker = mMap.addMarker(markerOptions);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,6));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,6));
         //mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
 
         if(client != null)

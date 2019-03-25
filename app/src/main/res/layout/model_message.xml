@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Name"
+            android:textColor="#267048"
             android:id="@+id/userPseudo"
             android:padding="10dp"
             android:layout_marginTop="30dp"

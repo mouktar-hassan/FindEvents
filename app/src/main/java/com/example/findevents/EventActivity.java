@@ -74,6 +74,7 @@ public class EventActivity extends AppCompatActivity {
         imageButtonBack=(ImageButton)findViewById(R.id.imageBtnBackEvent);
         mLatitude=(EditText) findViewById(R.id.eventLatitude);
         mLongtitude=(EditText)findViewById(R.id.eventLongitude);
+        //pour rendre les champs non editable
         mLatitude.setEnabled(false);
         mLongtitude.setEnabled(false);
 

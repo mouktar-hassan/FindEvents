@@ -54,6 +54,7 @@ public class UpdateActivity extends AppCompatActivity {
         //textViewDateCreated=(EditText) findViewById(R.id.dateCreation);
         textViewDateEvent=(EditText) findViewById(R.id.dateEvent);
         textViewLocation=(EditText) findViewById(R.id.location);
+        textViewLocation.setEnabled(false);
         modifier=(Button) findViewById(R.id.modifier);
         retour =(ImageButton) findViewById(R.id.annuler);
 

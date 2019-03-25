@@ -55,7 +55,7 @@ public class CardsAdapterMessage extends RecyclerView.Adapter<ViewHolderMessage>
 
         //BIND DATA
         holder.v_EventTitle.setText(message.getM_event());
-        holder.v_userPseudo.setText(message.getM_user());
+        holder.v_userPseudo.setText(message.getM_user()+":");
         holder.v_messageText.setText(message.getM_message());
 
         //WHEN ITEM IS CLICKED

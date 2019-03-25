@@ -134,7 +134,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(ShowEventDetailActivity.this).create();
-                alertDialog.setTitle("Voulez-vous gérer votre participation?");
+                alertDialog.setTitle("Voulez-vous participés cet évènement ?");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Oui",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
