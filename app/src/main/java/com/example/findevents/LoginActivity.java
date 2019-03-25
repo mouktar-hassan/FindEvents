@@ -133,6 +133,8 @@ public class LoginActivity extends AppCompatActivity  {
                                             editor.putString("valeur_token", valeur_token);
                                             editor.commit();
 
+
+
                                             //Toast.makeText(context, "login bien prise en compte, vous pouvez maintenant vous connecter", Toast.LENGTH_SHORT).show();
                                             //changement d'activity une fois connecté
                                             Intent eventsActivity = new Intent(LoginActivity.this, MainActivity.class);

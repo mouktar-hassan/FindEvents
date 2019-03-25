@@ -40,7 +40,7 @@ import beans.User;
 
 public class EventActivity extends AppCompatActivity {
 
-    Context context = this;
+    private Context context = this;
 
     // UI references.
     private AutoCompleteTextView mTitle;
@@ -72,11 +72,11 @@ public class EventActivity extends AppCompatActivity {
         mLongtitude=(EditText)findViewById(R.id.eventLatitude);
 
 
-        EventUrl = "http://fullstackter.alwaysdata.net/api/events";
+        EventUrl = "http://fullstackter.alwaysdata.net/api/events?longitude=44&latitude=44&radius=100000";
 
         UserUrl="http://fullstackter.alwaysdata.net/api/users";
 
-        getUserData();
+        //getUserData();
 
         bAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,12 +91,15 @@ public class EventActivity extends AppCompatActivity {
                 final double Latitude=Double.valueOf(mLatitude.getText().toString());
                 final double Longtitude=Double.valueOf(mLongtitude.getText().toString());
 
-                //récuperation des champs de text implicite( invisibles dans la formulaire d'ajoute d'évènement)
-                final String pcreator=ConnectedUserId.toString();
-                //final String pLongitude="43";
-                //final String pLatitude="5";
+                int createurDeLevent = getIdUtilisateurConnecte();
+                final String pcreator=String.valueOf(createurDeLevent);
 
+                Boolean dateexacte = testDate(DateEvent);
 
+                String testLatitude1=mLatitude.getText().toString();
+                String testLongitude2=mLongtitude.getText().toString();
+                boolean testLatitude=isok(testLatitude1);
+                boolean testLongitude=isok(testLongitude2);
 
                 //vérification des user input
                 if (title.equals("")) {
@@ -112,15 +115,26 @@ public class EventActivity extends AppCompatActivity {
                     Toast.makeText(context, "Vous devez entrer une Date d'Évènement!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
                 }
+                else if (dateexacte==false){
+                    Toast.makeText(context, "Vous devez entrer une Date d'Évènement de la forme YYYY-MM-DD!", Toast.LENGTH_SHORT).show();
+                    isInputOk = false;
+                }
                 else if(Adresse.equals("")){
                     Toast.makeText(context, "Vous devez entrer une Adresse exacte!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
                 }
+                /*else if(testLatitude==false){
+                    Toast.makeText(context, "Vous devez entrer une LATITUDE exacte!", Toast.LENGTH_SHORT).show();
+                    isInputOk = false;
+                }
+                else if(testLongitude==false){
+                    Toast.makeText(context, "Vous devez entrer une LONGITUDE exacte!", Toast.LENGTH_SHORT).show();
+                    isInputOk = false;
+                }*/
 
 
                 if (isInputOk) {
                     //création de la requete
-
 
                     RequestQueue queue = Volley.newRequestQueue(context);
 
@@ -129,43 +143,23 @@ public class EventActivity extends AppCompatActivity {
                                 @Override
                                 public void onResponse(String response) {
                                     Log.d("reponse d'ajoute", response);
-                                    try {
-                                        JSONObject reponse = new JSONObject(response);
-                                        if (reponse.has("token")) {
-                                            Log.d("reponse d'ajoute", response);
-                                            //Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
-                                            //Toast.makeText(context, "Ajoute de l'évènement avec succès!!!", Toast.LENGTH_SHORT).show();
-
-                                            Intent iListEvents = new Intent(context, ShowEventsListActivity.class);
-                                            context.startActivity(iListEvents);
-                                        } else {
-                                            Toast.makeText(context, "Ajoute de l'Évènement avec succès", Toast.LENGTH_SHORT).show();
-                                        }
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
+                                    Toast.makeText(context, "Ajout de l'Évènement avec succès", Toast.LENGTH_SHORT).show();
+                                    Intent iListEvents = new Intent(context, ShowEventsListActivity.class);
+                                    startActivity(iListEvents);
                                 }
                             },
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(context, "Problème de connexion", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Problème de connexion", Toast.LENGTH_LONG).show();
                                 }
                             }
                     ) {
                         @Override
                         public Map<String, String> getHeaders() throws com.android.volley.AuthFailureError {
 
-
                             HashMap<String, String> headers = new HashMap<>();
-
-                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-                            String token_type = preferences.getString("token_type", "none");
-                            String access_token = preferences.getString("access_token", "none");
-
                             headers.put("Content-Type", "application/x-www-form-urlencoded");
-                            headers.put("Authorization", token_type + " " + access_token);
-                            //headers.put("Authorization", "Bearer" + " " + access_token);
                             return headers;
 
                         }
@@ -187,11 +181,69 @@ public class EventActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
     }
+
+    //récuperer l'id de l'utilisateur connecté
+    public int getIdUtilisateurConnecte (){
+        SharedPreferences preferencesCurent = PreferenceManager.getDefaultSharedPreferences(this);
+        String LYDIY = preferencesCurent.getString("idCurrentUser", "none");
+        int valeur = Integer.parseInt(LYDIY);
+        return valeur;
+    }
+
+    private Boolean testDate(String date){
+        String datePattern = "\\d{4}-\\d{2}-\\d{2}";
+        Boolean isCorrectDate = date.matches(datePattern);
+        return isCorrectDate;
+    }
+
+    public static boolean isInteger(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public static boolean isdouble(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public static boolean isok(String str) {
+        boolean x = isInteger (str);
+        boolean z = isdouble (str);
+
+        if (x==true||z==true){
+            return true;
+        }
+        else return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //********************************************************
 
     //Pour récuperer l'info de l'utilisateur connecté
     private void getUserData() {
@@ -235,6 +287,7 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("Volley", error.toString());
+                Log.d("Volley", error.toString());
                 Toast toast = Toast.makeText(getApplicationContext(), "Erreur de chargement", Toast.LENGTH_SHORT);
                 toast.show();
                 //progressDialog.dismiss();

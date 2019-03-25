@@ -14,7 +14,7 @@ import com.example.findevents.R;
 import java.util.List;
 
 
-public class CardsAdapterMessage extends RecyclerView.Adapter<ViewHolder>{
+public class CardsAdapterMessage extends RecyclerView.Adapter<ViewHolderMessage>{
 
     //FIELDS TO STORE PASSED IN VALUES
 
@@ -33,12 +33,12 @@ public class CardsAdapterMessage extends RecyclerView.Adapter<ViewHolder>{
 
     }
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolderMessage onCreateViewHolder(ViewGroup parent, int viewType) {
         //INFLATE A VIEW FROM XML
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.model_message,null);
 
         //HOLDER
-        ViewHolder holder=new ViewHolder(v);
+        ViewHolderMessage holder=new ViewHolderMessage(v);
 
         return holder;
     }
@@ -48,15 +48,15 @@ public class CardsAdapterMessage extends RecyclerView.Adapter<ViewHolder>{
 
     //DATA IS BEING BOUND TO VIEWS
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolderMessage holder, final int position) {
 
         final Message message=list.get(position);
         //message.getM_id().
 
         //BIND DATA
-        holder.nameTxt.setText(""+message.getM_id());
-        holder.posTxt.setText(message.getM_message());
-        holder.img.setImageResource(R.drawable.event_icon);
+        holder.v_EventTitle.setText(message.getM_event());
+        holder.v_userPseudo.setText(message.getM_user());
+        holder.v_messageText.setText(message.getM_message());
 
         //WHEN ITEM IS CLICKED
         holder.setItemClickListener(new ItemClickListener() {

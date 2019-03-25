@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
-INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
-INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
-INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
 MERGED from [com.android.support:design:28.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/06319ac09af2dfed5b79d749c662963d/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/622c59b89080b2f46e53758fa5c8ef7f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-maps:11.0.2] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.2.aar/1b7bdaa4f6fdd2d5449f771633589c8d/AndroidManifest.xml:16:1-25:12
@@ -43,20 +43,20 @@ MERGED from [com.android.support:interpolator:28.0.0] /home/ubuntu/.gradle/cache
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/441335754e9ec5af3888cd203d188c6f/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/22db481e435ff9098a7fe09b5d6dbcf2/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/812af0abeb2fe0ebc70ccb62f1099bc7/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
-INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
-INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
+INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
+INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
 	package
 		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:3:5-37
 		INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml
 		INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
 		INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-68:12
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:1-69:12
 		INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:2:11-69
@@ -97,7 +97,7 @@ ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidMan
 	android:name
 		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:21:22-94
 application
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:23:5-66:19
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:23:5-67:19
 MERGED from [com.android.support:design:28.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/06319ac09af2dfed5b79d749c662963d/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/06319ac09af2dfed5b79d749c662963d/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-maps:11.0.2] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.2.aar/1b7bdaa4f6fdd2d5449f771633589c8d/AndroidManifest.xml:24:5-19
@@ -136,68 +136,72 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/ubuntu/.gradl
 		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:24:9-35
 	android:theme
 		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:29:9-40
-activity#com.example.findevents.UpdateActivity
+activity#com.example.findevents.ProfilActivity
 ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:30:9-61
 	android:name
 		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:30:19-49
+activity#com.example.findevents.UpdateActivity
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:31:9-52
+	android:name
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:31:19-49
 activity#com.example.findevents.MessageActivity
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:31:9-53
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:32:9-53
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:31:19-50
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:32:19-50
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:40:9-42:55
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:41:9-43:55
 	android:value
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:42:13-52
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:43:13-52
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:41:13-58
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:42:13-58
 activity#com.example.findevents.MapsActivity
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:44:9-46:60
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:45:9-47:60
 	android:label
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:46:13-57
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:47:13-57
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:45:13-41
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:46:13-41
 activity#com.example.findevents.ShowEventDetailActivity
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:47:9-61
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:48:9-61
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:47:19-58
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:48:19-58
 activity#com.example.findevents.ShowEventsListActivity
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:48:9-60
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:49:9-60
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:48:19-57
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:49:19-57
 activity#com.example.findevents.EventActivity
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:49:9-51
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:50:9-51
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:49:19-48
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:50:19-48
 activity#com.example.findevents.SignUp
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:50:9-52:62
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:51:9-53:62
 	android:label
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:52:13-59
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:53:13-59
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:51:13-35
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:52:13-35
 activity#com.example.findevents.LoginActivity
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:53:9-61:20
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:54:9-62:20
 	android:label
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:55:13-57
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:56:13-57
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:54:13-42
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:55:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:56:13-60:29
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:57:13-61:29
 action#android.intent.action.MAIN
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:57:17-69
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:58:17-69
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:57:25-66
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:58:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:59:17-77
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:60:17-77
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:59:27-74
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:60:27-74
 activity#com.example.findevents.MainActivity
-ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:62:9-65:59
+ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:63:9-66:59
 	android:label
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:64:13-45
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:65:13-45
 	android:theme
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:65:13-56
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:66:13-56
 	android:name
-		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:63:13-41
+		ADDED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml:64:13-41
 uses-sdk
 INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/AndroidManifest.xml

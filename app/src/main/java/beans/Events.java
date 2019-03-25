@@ -14,11 +14,12 @@ public class Events {
     private String  location;
     private double latitude;
     private double longitude;
+    private int guests_number;
 
 
     public Events(){ super();}
 
-    public Events(int id,int creator, String title, String descritption, String date_creation, String date_event, String location ){
+    public Events(int id,int creator, String title, String descritption, String date_creation, String date_event, String location,int guests_number ){
         super();
 
         this.id=id;
@@ -28,6 +29,7 @@ public class Events {
         this.date_creation=date_creation;
         this.date_event=date_event;
         this.location=location;
+        this.guests_number=guests_number;
     }
 
     public Events(int id, String title, String location, double latitude, double longitude) {
@@ -117,5 +119,13 @@ public class Events {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public int getGuests_number() {
+        return guests_number;
+    }
+
+    public void setGuests_number(int guests_number) {
+        this.guests_number = guests_number;
     }
 }

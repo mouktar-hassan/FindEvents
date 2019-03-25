@@ -21,9 +21,9 @@
             android:icon="@android:drawable/ic_popup_reminder"
             android:title="Messages" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_profil"
             android:icon="@android:drawable/ic_menu_myplaces"
-            android:title="Invité(e)s" />
+            android:title="Profil" />
     </group>
 
     <item android:title="Communicate">

@@ -40,6 +40,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.findevents.ProfilActivity" />
         <activity android:name="com.example.findevents.UpdateActivity" />
         <activity android:name="com.example.findevents.MessageActivity" />
         <!--

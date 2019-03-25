@@ -11,18 +11,19 @@ import com.example.findevents.R;
 
 public class ViewHolderMessage extends RecyclerView.ViewHolder implements View.OnClickListener {
     //OUR VIEWS
-    ImageView img;
-    TextView nameTxt;
-    TextView posTxt;
+
+    TextView v_EventTitle;
+    TextView v_userPseudo;
+    TextView v_messageText;
     private ItemClickListener itemClickListener;
 
     //our contructor
     public ViewHolderMessage(View itemView) {
         super(itemView);
 
-        nameTxt= (TextView) itemView.findViewById(R.id.nameTxt);
-        posTxt= (TextView) itemView.findViewById(R.id.posTxt);
-        img= (ImageView) itemView.findViewById(R.id.playerImage);
+        v_EventTitle= (TextView) itemView.findViewById(R.id.EventTitle);
+        v_userPseudo= (TextView) itemView.findViewById(R.id.userPseudo);
+        v_messageText=(TextView) itemView.findViewById(R.id.messageText);
 
         itemView.setOnClickListener(this);
     }

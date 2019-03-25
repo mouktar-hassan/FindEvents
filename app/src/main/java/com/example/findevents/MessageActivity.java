@@ -104,8 +104,8 @@ public class MessageActivity extends AppCompatActivity {
                         Message message=new Message();
 
                         message.setM_id(jsonObject.getInt("id"));
-                        message.setM_user(jsonObject.getInt("user"));
-                        message.setM_event(jsonObject.getInt("event"));
+                        message.setM_user(jsonObject.getString("pseudo"));
+                        message.setM_event(jsonObject.getString("title"));
                         message.setM_message(jsonObject.getString("message"));
 
                         messageList.add(message);
@@ -132,56 +132,7 @@ public class MessageActivity extends AppCompatActivity {
     }
 
 
-    //Pour récuperer l'info de l'utilisateur connecté
-    private void getUserData() {
 
-
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(UserUrl, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-
-                        JSONObject jsonObject = response.getJSONObject(i);
-                        User user=new User();
-
-                        user.setU_id(jsonObject.getInt("id"));
-                        user.setU_pseudo(jsonObject.getString("pseudo"));
-                        userparams=new HashMap<>();
-                        userparams.put(user.getU_id(),user.getU_pseudo());
-                        //listUsers.add(user);
-                        SharedPreferences sharedpreferences = getSharedPreferences(LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                        // Reading from SharedPreferences
-                        String value = sharedpreferences.getString("id", "");
-                        Log.d("mes preferences infos", value);
-                        if(user.getU_id()==Integer.valueOf(value)){
-                            //on récupere l'id de l'utilisateur connecté
-                            userPseudo=user.getU_pseudo();
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        //progressDialog.dismiss();
-                    }
-                }
-
-                //progressDialog.dismiss();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Volley", error.toString());
-                Toast toast = Toast.makeText(getApplicationContext(), "Erreur de chargement", Toast.LENGTH_SHORT);
-                toast.show();
-                //progressDialog.dismiss();
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-    }
 
 
 }
