@@ -100,6 +100,10 @@
         "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/622c59b89080b2f46e53758fa5c8ef7f/res/drawable-mdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/layout_list_messages_event.xml.flat",
+        "source": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/res/layout/list_messages_event.xml"
+    },
+    {
         "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/layout_abc_action_mode_close_item_material.xml.flat",
         "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/622c59b89080b2f46e53758fa5c8ef7f/res/layout/abc_action_mode_close_item_material.xml"
     },
@@ -474,6 +478,10 @@
     {
         "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark.xml.flat",
         "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.2.aar/e4e7880abd71287d524d3f4bb4fd070b/res/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/layout_activity_messages_par_evenement.xml.flat",
+        "source": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/src/main/res/layout/activity_messages_par_evenement.xml"
     },
     {
         "merged": "/home/ubuntu/AndroidStudioProjects/FindEvents/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",

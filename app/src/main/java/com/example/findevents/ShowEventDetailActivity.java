@@ -134,7 +134,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(ShowEventDetailActivity.this).create();
-                alertDialog.setTitle("Voulez-vous participés cet évènement ?");
+                alertDialog.setTitle("Veuillez gérer votre participation !");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Oui",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
@@ -182,8 +182,8 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         });
 
         //Bouton pour Commenter
-        FloatingActionButton fab_comment = (FloatingActionButton) findViewById(R.id.fabCommente);
-        fab_comment.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab_MessagesParEvent = (FloatingActionButton) findViewById(R.id.MessagesEvent);
+        fab_MessagesParEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -227,6 +227,27 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Vérifiez que vous etes bien le createur pour pouvoir modifier !!", Toast.LENGTH_LONG).show();
                 }
 
+            }
+        });
+
+        FloatingActionButton fab_comment = (FloatingActionButton) findViewById(R.id.fabCommente);
+        fab_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //recuperation des preferences pour savoir si on est connecté
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+                String valeur_token = preferences.getString("valeur_token", "none");
+
+                if (valeur_token.equals("none")) {
+                    //si l'on est pas connecté
+                    Toast.makeText(getApplicationContext(), "Vous devez vous connecter pour voir les commentaires de cet évenement", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent=new Intent(ShowEventDetailActivity.this,MessagesParEvenement.class);
+                    intent.putExtra("id",sEventId);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -293,7 +314,9 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 params.put("message", subEditText.getText().toString());
                 //params.put("event","9");
-                params.put("user", sEventUser.toString());
+
+                int idEcrivain = getIdUtilisateurConnecte();
+                params.put("user", String.valueOf(idEcrivain));
                 params.put("event",sEventId.toString());
 
                 return params;
@@ -319,7 +342,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                 {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Cet évenement contient des invités, veuillez envoyer un mail avec les raisons de la suppression à l'admin: wael_02@hotmail.fr", Toast.LENGTH_LONG).show();
                         Log.d("Erreur de reponse  ", "Erreur1 \n" + error.toString());
                     }
                 }
@@ -536,6 +559,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                                 if (invite.getG_user()==IdConnecte){
                                     deleteGuest(URL_VERS_GUEST+invite.getG_id());
                                     Toast.makeText(getApplicationContext(), "Dommage de vous voir abondonner votre participation", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(ShowEventDetailActivity.this, MainActivity.class));
                                 }
                                 /*else {
                                     Toast.makeText(getApplicationContext(), "Une erreur est survenue lors de votre abondant de l'évent", Toast.LENGTH_LONG).show();
@@ -595,6 +619,12 @@ public class ShowEventDetailActivity extends AppCompatActivity {
         return valeur;
     }
 
+    public String getPseudoUtilisateurConnecte (){
+        SharedPreferences preferencesCurent = PreferenceManager.getDefaultSharedPreferences(this);
+        String pseudodelutilsateur = preferencesCurent.getString("pseudoCurrentUser", "none");
+        return pseudodelutilsateur;
+    }
+
     //**************************************************************
 
     private void testCurrentUserParticipeOuNon () {
@@ -641,7 +671,7 @@ public class ShowEventDetailActivity extends AppCompatActivity {
                 })
         {
             @Override
-            public Map<String, String> getHeaders() throws com.android.volley.AuthFailureError {
+            public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<>();
                 headers.put("Content-Type", "application/json");
                 return headers;

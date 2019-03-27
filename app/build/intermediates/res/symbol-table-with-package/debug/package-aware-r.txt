@@ -1116,6 +1116,7 @@ id CTRL
 id EventTitle
 id FUNCTION
 id META
+id MessagesEvent
 id SHIFT
 id SYM
 id action_bar
@@ -1297,6 +1298,7 @@ id progress_circular
 id progress_horizontal
 id pseudo
 id radio
+id recyclerView
 id right
 id right_icon
 id right_side
@@ -1357,6 +1359,8 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
+id textViewDetails
+id textViewMessage
 id textView_connexion
 id textView_enregistrement
 id text_input_password_toggle
@@ -1453,6 +1457,7 @@ layout activity_login
 layout activity_main
 layout activity_maps2
 layout activity_message
+layout activity_messages_par_evenement
 layout activity_profil
 layout activity_show_event_detail
 layout activity_show_events_list
@@ -1480,6 +1485,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout list_messages_event
 layout model
 layout model_message
 layout mtrl_layout_snackbar

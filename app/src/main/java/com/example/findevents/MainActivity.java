@@ -210,6 +210,7 @@ public class MainActivity extends AppCompatActivity
                             SharedPreferences preferencesCurent = PreferenceManager.getDefaultSharedPreferences(context);
                             SharedPreferences.Editor editorCurent = preferencesCurent.edit();
                             editorCurent.putString("idCurrentUser", String.valueOf(idCurrentUser));
+                            editorCurent.putString("pseudoCurrentUser", String.valueOf(pseudoCurrentUser));
                             editorCurent.commit();
 
                             Log.d("valeurs", pseudoCurrentUser + " " + idCurrentUser);

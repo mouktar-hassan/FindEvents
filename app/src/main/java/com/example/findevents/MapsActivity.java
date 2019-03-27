@@ -248,10 +248,12 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                             for (Events evenement : listeEvents ) {
                                 LatLng location = new LatLng(evenement.getLatitude(), evenement.getLongitude());
 
-                                marker1 = mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()).snippet(String.valueOf(evenement.getId())));
-                                marker1.setTag(0);
 
+                                //marker1 = mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()).snippet(String.valueOf(evenement.getId())));
                                 //mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()));
+                                //marker1.setTag(0);
+
+                                mMap.addMarker(new MarkerOptions().position(location).title(evenement.getTitle()+" à : "+evenement.getLocation()));
                             }
 
                             Log.d("taille listef", String.valueOf(listeEvents.size()));
@@ -278,10 +280,11 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
     public boolean onMarkerClick(Marker marker) {
         //int clickCount = (int) marker.getTag();
 
-        Intent intent = new Intent(MapsActivity.this, ShowEventDetailActivity.class);
-        this.startActivity(intent);
+        //Intent intent = new Intent(MapsActivity.this, ShowEventDetailActivity.class);
+        //intent.putExtra("id", marker.getSnippet());
+        //this.startActivity(intent);
 
-        intent.putExtra("id", marker.getSnippet());
+        Toast.makeText(getApplicationContext(),"Cliquer sur l'onglet Liste d'évenements pour voir plus détails sur l'évenement : "+marker.getTitle(), Toast.LENGTH_LONG).show();
 
 
         return false;
