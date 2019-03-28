@@ -65,9 +65,6 @@ public class LoginActivity extends AppCompatActivity  {
     String valeur_token;
 
 
-    //EditText etpseudo;
-    //EditText etpassword;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

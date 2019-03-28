@@ -1,5 +1,6 @@
 package com.example.findevents;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -20,10 +21,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UpdateActivity extends AppCompatActivity {
+
+    private Context context = this;
 
     private int id;
     private String title;
@@ -35,6 +40,8 @@ public class UpdateActivity extends AppCompatActivity {
     private Button modifier;
     private ImageButton retour;
     private String url;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +64,8 @@ public class UpdateActivity extends AppCompatActivity {
         textViewLocation.setEnabled(false);
         modifier=(Button) findViewById(R.id.modifier);
         retour =(ImageButton) findViewById(R.id.annuler);
+        //validation de la date, l'heur et la minute
+
 
         textViewTitle.setText(title);
         textViewDescription.setText(description);
@@ -78,34 +87,54 @@ public class UpdateActivity extends AppCompatActivity {
         });
     }
     void modifierEvent(String url){
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), "Modifié", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(UpdateActivity.this, ShowEventsListActivity.class));
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
-                Log.d("dqsdqsd ", "Erreur1 \n" + error.toString());
-            }
-        }
-        ) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("title", textViewTitle.getText().toString());
-                params.put("description", textViewDescription.getText().toString());
-               // params.put("created_at",textViewDateCreated.getText().toString());
-                params.put("date_event",textViewDateEvent.getText().toString());
-                params.put("location_name",textViewLocation.getText().toString());
+        boolean isInputOk = true;
+        Boolean dateexacte = testDate(textViewDateEvent.toString());
+        /*if (dateexacte==false){
+            Toast.makeText(context, "Vous devez entrer une Date d'Évènement de la forme YYYY-MM-DD-HH-MM!", Toast.LENGTH_SHORT).show();
+            isInputOk = false;
+        }*/
 
-                return params;
+        //if (isInputOk==true)
+
+            RequestQueue requestQueue= Volley.newRequestQueue(this);
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Toast.makeText(getApplicationContext(), "Modifié", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(UpdateActivity.this, ShowEventsListActivity.class));
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                    Log.d("dqsdqsd ", "Erreur1 \n" + error.toString());
+                }
             }
-        };
-        requestQueue.add(stringRequest);
+            ) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("title", textViewTitle.getText().toString());
+                    params.put("description", textViewDescription.getText().toString());
+                    params.put("date_event",textViewDateEvent.getText().toString());
+                    params.put("location_name",textViewLocation.getText().toString());
+
+                    return params;
+                }
+            };
+            requestQueue.add(stringRequest);
+
+
+
     }
+
+
+    //Pour valider le format du Date , l'heur et la minute
+    private Boolean testDate(String date){
+        String datePattern = "\\d{4}-\\d{2}-\\d{2}-\\d{2}-\\d{2}";
+        Boolean isCorrectDate = date.matches(datePattern);
+        return isCorrectDate;
+    }
+
 }

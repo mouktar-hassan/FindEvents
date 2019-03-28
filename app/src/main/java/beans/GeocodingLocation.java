@@ -45,8 +45,7 @@ public class GeocodingLocation {
                     } else {
                         message.what = 1;
                         Bundle bundle = new Bundle();
-                        result = "Address: " + locationAddress +
-                                "\n Unable to get Latitude and Longitude for this address location.";
+                        result = "Impossible";
                         bundle.putString("addressLatLng", result);
                         message.setData(bundle);
                     }

@@ -1,10 +1,10 @@
 package com.example.findevents;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.Address;
-import android.location.Geocoder;
+
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
@@ -14,31 +14,31 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
+
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import beans.GeocodingLocation;
-import beans.User;
+
 
 
 public class EventActivity extends AppCompatActivity {
@@ -55,6 +55,13 @@ public class EventActivity extends AppCompatActivity {
     private Integer ConnectedUserId=0;
     private Map<Integer,String> userparams;
     private String EventUrl;
+    private int annee,mois,jour,heur,minute;
+    private SimpleDateFormat mSimpleDateFormat;
+    private DateFormat df;
+    private Calendar cal;
+    //Pour valider le double Lat Lng
+
+
 
 
 
@@ -90,27 +97,37 @@ public class EventActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 String address = mAdresse.getText().toString();
+                if (address.equals("")){
+                    Toast.makeText(context, "Vous devez entrer une Adresse exacte!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    GeocodingLocation locationAddress = new GeocodingLocation();
+                    locationAddress.getAddressFromLocation(address,
+                            getApplicationContext(), new GeocoderHandler());
+                }
 
-                GeocodingLocation locationAddress = new GeocodingLocation();
-                locationAddress.getAddressFromLocation(address,
-                        getApplicationContext(), new GeocoderHandler());
+
             }
         });
 
-        //getUserData();
+
 
         bAddEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 boolean isInputOk = true;
 
+                final String DOUBLE_PATTERN = "[0-9]{0,1}[0-9]*";
+
                 //récuperation des champs de text explicite( visibles dans la formulaire d'ajoute d'évènement)
                 final String title =mTitle.getText().toString();
                 final String description=mDescription.getText().toString();
                 final String DateEvent=mDateEvent.getText().toString();
                 final String Adresse=mAdresse.getText().toString();
-                final double Latitude=Double.valueOf(mLatitude.getText().toString());
-                final double Longtitude=Double.valueOf(mLongtitude.getText().toString());
+                final String Latitude=mLatitude.getText().toString();
+                final String Longtitude=mLongtitude.getText().toString();
+                //final String Latitude=Double.valueOf(mLatitude.getText().toString());
+                //final String Longtitude=Double.valueOf(mLongtitude.getText().toString());
 
                 int createurDeLevent = getIdUtilisateurConnecte();
                 final String pcreator=String.valueOf(createurDeLevent);
@@ -137,13 +154,29 @@ public class EventActivity extends AppCompatActivity {
                     isInputOk = false;
                 }
                 else if (dateexacte==false){
-                    Toast.makeText(context, "Vous devez entrer une Date d'Évènement de la forme YYYY-MM-DD!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Vous devez entrer une Date d'Évènement de la forme YYYY-MM-DD-HH-MM!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
                 }
                 else if(Adresse.equals("")){
                     Toast.makeText(context, "Vous devez entrer une Adresse exacte!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
                 }
+                else if (Latitude.isEmpty() && !Pattern.matches(DOUBLE_PATTERN,Latitude)){
+                    Toast.makeText(context, "Vous devez entrer une Latitude et avec un type double!", Toast.LENGTH_SHORT).show();
+
+
+                    isInputOk = false;
+
+                }
+                else if (Longtitude.isEmpty() && !Pattern.matches(DOUBLE_PATTERN,Longtitude)){
+                    Toast.makeText(context, "Vous devez entrer une Longitude et avec un type double!", Toast.LENGTH_SHORT).show();
+                    if (Pattern.matches(DOUBLE_PATTERN,Latitude)){
+                        isInputOk = false;
+                    }
+                }
+
+
+
                 /*else if(testLatitude==false){
                     Toast.makeText(context, "Vous devez entrer une LATITUDE exacte!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
@@ -172,7 +205,7 @@ public class EventActivity extends AppCompatActivity {
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(getApplicationContext(), "Problème de connexion", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Problème de connexion, Veuillez vous assurez que vous avez bien remplie toutes las champs de la formulaire", Toast.LENGTH_LONG).show();
                                 }
                             }
                     ) {
@@ -192,8 +225,8 @@ public class EventActivity extends AppCompatActivity {
                             params.put("description", description);
                             params.put("date_event", DateEvent);
                             params.put("location_name", Adresse);
-                            params.put("latitude", Double.toString(Latitude));
-                            params.put("longitude", Double.toString(Longtitude));
+                            params.put("latitude", Latitude);
+                            params.put("longitude", Longtitude);
                             return params;
                         }
 
@@ -202,6 +235,8 @@ public class EventActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     //récuperer l'id de l'utilisateur connecté
@@ -212,11 +247,16 @@ public class EventActivity extends AppCompatActivity {
         return valeur;
     }
 
+
+    //Pour valider le format du Date , l'heur et la minute
     private Boolean testDate(String date){
-        String datePattern = "\\d{4}-\\d{2}-\\d{2}";
+        String datePattern = "\\d{4}-\\d{2}-\\d{2}-\\d{2}-\\d{2}";
         Boolean isCorrectDate = date.matches(datePattern);
         return isCorrectDate;
     }
+
+
+
 
     public static boolean isInteger(String str) {
         try {
@@ -247,76 +287,7 @@ public class EventActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //********************************************************
-
-    //Pour récuperer l'info de l'utilisateur connecté
-    private void getUserData() {
-
-
-
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(UserUrl, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-
-                        JSONObject jsonObject = response.getJSONObject(i);
-                        User user=new User();
-
-                        user.setU_id(jsonObject.getInt("id"));
-                        user.setU_pseudo(jsonObject.getString("pseudo"));
-                        userparams=new HashMap<>();
-                        userparams.put(user.getU_id(),user.getU_pseudo());
-                        //listUsers.add(user);
-                        SharedPreferences sharedpreferences = getSharedPreferences(LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                        // Reading from SharedPreferences
-                        String value = sharedpreferences.getString("pseudo", "");
-                        Log.d("mes preferences infos", value);
-                        if(user.getU_pseudo().equals(value)){
-                            //on récupere l'id de l'utilisateur connecté
-                            ConnectedUserId=user.getU_id();
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        //progressDialog.dismiss();
-                    }
-                }
-
-                //progressDialog.dismiss();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Volley", error.toString());
-                Log.d("Volley", error.toString());
-                Toast toast = Toast.makeText(getApplicationContext(), "Erreur de chargement", Toast.LENGTH_SHORT);
-                toast.show();
-                //progressDialog.dismiss();
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
-    }
+    //méthode pour fermer l'activité en cours d'execution
 
     public void eventBackonClick(View view){
         EventActivity.this.finish();
@@ -327,11 +298,25 @@ public class EventActivity extends AppCompatActivity {
      class GeocoderHandler extends Handler {
         @Override
         public void handleMessage(Message message) {
+
             String result;
             switch (message.what) {
                 case 1:
                     Bundle bundle = message.getData();
                     result = bundle.getString("addressLatLng");
+                    if (result.equals("")){
+                        Toast.makeText(context, "Vous devez entrer une Adresse exacte!", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(result.equals("Impossible")){
+                        Toast.makeText(context, "L'adresses saisie est incorrect. Veuillez saisir une adresse correct!", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        final String SEPARATEUR = ",";
+                        //pour découper la résultat en Lat et en Lng
+                        String motsLatLng[] = result.split(SEPARATEUR);
+                        mLatitude.setText(motsLatLng[0]);
+                        mLongtitude.setText(motsLatLng[1]);
+                    }
 
                     break;
                 default:
@@ -339,13 +324,12 @@ public class EventActivity extends AppCompatActivity {
 
             }
 
-            final String SEPARATEUR = ",";
-            //pour découper la résultat en Lat et en Lng
-            String motsLatLng[] = result.split(SEPARATEUR);
-                mLatitude.setText(motsLatLng[0]);
-                mLongtitude.setText(motsLatLng[1]);
+
         }
     }
+
+
+
 }
 
 
