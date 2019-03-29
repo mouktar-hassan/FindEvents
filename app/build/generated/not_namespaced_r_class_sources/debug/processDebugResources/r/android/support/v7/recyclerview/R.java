@@ -103,8 +103,8 @@ public final class R {
         private id() {}
 
         public static final int action_container = 0x7f08000f;
-        public static final int action_divider = 0x7f080011;
-        public static final int action_image = 0x7f080012;
+        public static final int action_divider = 0x7f080012;
+        public static final int action_image = 0x7f080013;
         public static final int action_text = 0x7f080019;
         public static final int actions = 0x7f08001a;
         public static final int async = 0x7f080024;

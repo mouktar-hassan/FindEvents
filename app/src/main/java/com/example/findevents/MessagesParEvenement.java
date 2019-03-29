@@ -53,7 +53,7 @@ public class MessagesParEvenement extends AppCompatActivity {
 
         loadEvents();
 
-        Toast.makeText(getApplicationContext(), url, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), url, Toast.LENGTH_SHORT).show();
     }
 
     private int getIdEvent(){

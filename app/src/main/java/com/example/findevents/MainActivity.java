@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -99,7 +100,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_deconnection) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("token_type", "none");
+            editor.putString("valeur_token", "none");
+            editor.putString("pseudoCurrentUser", "none");
+            editor.putString("idCurrentUser", "none");
+            editor.commit();
+
+            //Toast.makeText(getApplicationContext(), "Au revoir !", Toast.LENGTH_SHORT).show();
+
+            Intent goLogin = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(goLogin);
             return true;
         }
 

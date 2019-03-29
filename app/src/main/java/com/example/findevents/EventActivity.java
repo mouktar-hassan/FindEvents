@@ -147,7 +147,7 @@ public class EventActivity extends AppCompatActivity {
                     Toast.makeText(context, "Vous devez entrer une Description!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
                 }  else if (description.length() < 10) {
-                    Toast.makeText(context, "Veuillez écrire une description pertinent!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Veuillez écrire une description pertinente!", Toast.LENGTH_SHORT).show();
                     isInputOk = false;
                 }else if (DateEvent.equals("")){
                     Toast.makeText(context, "Vous devez entrer une Date d'Évènement!", Toast.LENGTH_SHORT).show();
@@ -205,7 +205,7 @@ public class EventActivity extends AppCompatActivity {
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(getApplicationContext(), "Problème de connexion, Veuillez vous assurez que vous avez bien remplie toutes las champs de la formulaire", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Problème de connexion, Veuillez vous assurez que vous avez bien remplie tous les champs du formulaire", Toast.LENGTH_LONG).show();
                                 }
                             }
                     ) {

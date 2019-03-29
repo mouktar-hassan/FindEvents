@@ -15,27 +15,27 @@
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@android:drawable/ic_menu_sort_by_size"
-            android:title="Liste d'evenement" />
+            android:title="Liste d'événements" />
         <item
             android:id="@+id/nav_comments"
             android:icon="@android:drawable/ic_popup_reminder"
-            android:title="Messages" />
+            android:title="Commentaires" />
         <item
             android:id="@+id/nav_profil"
             android:icon="@android:drawable/ic_menu_myplaces"
             android:title="Profil" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Communication">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Partager" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Envoyer" />
         </menu>
     </item>
 

@@ -124,8 +124,8 @@ public class SignUp extends AppCompatActivity {
                                             //Toast.makeText(context, "inscription bien prise en compte, vous pouvez maintenant vous connecter", Toast.LENGTH_SHORT).show();
                                             Intent LoginActivity = new Intent(context, LoginActivity.class);
                                             context.startActivity(LoginActivity);
-                                        } else {
-                                            Toast.makeText(context, "pseudo déja pris", Toast.LENGTH_SHORT).show();
+                                        } else if (reponse.has("register")) {
+                                            Toast.makeText(context, "pseudo existe déja ! Veuillez choisir un nouveau pseudo.", Toast.LENGTH_SHORT).show();
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
