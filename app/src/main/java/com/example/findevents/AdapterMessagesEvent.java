@@ -34,7 +34,7 @@ public class AdapterMessagesEvent extends RecyclerView.Adapter<AdapterMessagesEv
 
         //viewHolder.textViewNomEvent.setText("Evénement : "+listItem.getTitreEvent());
         viewHolder.textViewMessage.setText(listItem.getMessageEvent());
-        viewHolder.textViewDetails.setText("Ecris par : " +listItem.getPseudoEcrivain()+ " le : " +listItem.getDate());
+        viewHolder.textViewDetails.setText("Écrit par : " +listItem.getPseudoEcrivain()+ " le : " +listItem.getDate());
 
     }
 
